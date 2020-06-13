@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Util : MonoBehaviour
 {
@@ -37,30 +35,6 @@ public class Util : MonoBehaviour
             }
         }
     }
-
-    /**
-     * private static ElementType[] ELEMENT_TYPES_EDITOR =
-    {
-        ElementType.NONE,
-        ElementType.GENERATOR,
-        ElementType.GENERATOR,
-        ElementType.GENERATOR,
-        ElementType.GENERATOR,
-        ElementType.GENERATOR,
-        ElementType.WIRES,
-        ElementType.WIRES,
-        ElementType.WIRES,
-        ElementType.WIRES,
-        ElementType.RESISTOR,
-        ElementType.INDUCTION,
-        ElementType.LAMP
-    };
-
-    private static int[] ELEMENT_CONNECTIONS_EDITOR =
-    {
-        0, 15, 7, 3, 10, 4, 5, 6, 13, 15, 10, 10, 8
-    };
-     */
 
     private static int GetDirections(int connections)
     {

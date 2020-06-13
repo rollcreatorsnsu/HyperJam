@@ -1,19 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Xml.Linq;
 using UnityEngine;
 
 public static class Options
 {
     private static string fileName = "fastConnection.data";
     private static BinaryFormatter binaryFormatter = new BinaryFormatter();
-    private static bool _IsSound;
+    private static bool _isSound;
 
-    public static bool IsSound
+    public static bool isSound
     {
-        get => _IsSound;
+        get => _isSound;
         set
         {
             if (value)
@@ -25,7 +22,7 @@ public static class Options
                 AudioListener.volume = 0;
             }
 
-            _IsSound = value;
+            _isSound = value;
             Save();
         }
     }
@@ -38,7 +35,7 @@ public static class Options
         }
         else
         {
-            IsSound = true;
+            isSound = true;
             Save();
         }
     }
@@ -47,7 +44,7 @@ public static class Options
     {
         using (FileStream stream = new FileStream(fileName, FileMode.Create))
         {
-            binaryFormatter.Serialize(stream, IsSound);
+            binaryFormatter.Serialize(stream, isSound);
         }
     }
 
@@ -55,7 +52,7 @@ public static class Options
     {
         using (FileStream stream = new FileStream(fileName, FileMode.Open))
         {
-            _IsSound = (bool)binaryFormatter.Deserialize(stream);
+            _isSound = (bool)binaryFormatter.Deserialize(stream);
         }
     }
     
