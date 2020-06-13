@@ -801,6 +801,7 @@ GameObject:
   m_Component:
   - component: {fileID: 535378736}
   - component: {fileID: 535378737}
+  - component: {fileID: 535378738}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -828,7 +829,7 @@ RectTransform:
   m_AnchorMin: {x: 0.1235, y: 0.7216875}
   m_AnchorMax: {x: 0.8987778, y: 0.7778595}
   m_AnchoredPosition: {x: -1.5999756, y: -0.4000244}
-  m_SizeDelta: {x: 6.899994, y: 6.699951}
+  m_SizeDelta: {x: 0, y: 6.6999245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &535378737
 CanvasRenderer:
@@ -838,6 +839,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535378735}
   m_CullTransparentMesh: 0
+--- !u!114 &535378738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535378735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 6.4794497
 --- !u!1 &596735148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1194,7 @@ GameObject:
   - component: {fileID: 926549373}
   - component: {fileID: 926549374}
   - component: {fileID: 926549375}
+  - component: {fileID: 926549376}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1215,7 +1231,7 @@ RectTransform:
   m_AnchorMin: {x: 0.1235, y: 0.33200002}
   m_AnchorMax: {x: 0.8987778, y: 0.6978594}
   m_AnchoredPosition: {x: -1.5600586, y: 3.9000244}
-  m_SizeDelta: {x: 7.300049, y: -1.7999878}
+  m_SizeDelta: {x: 0, y: -1.7999859}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &926549374
 CanvasRenderer:
@@ -1254,6 +1270,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &926549376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926549372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1.245321
 --- !u!1 &947869240
 GameObject:
   m_ObjectHideFlags: 0
