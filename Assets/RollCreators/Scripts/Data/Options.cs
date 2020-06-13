@@ -45,7 +45,7 @@ public static class Options
 
     public static void Save()
     {
-        using (FileStream stream = new FileStream(fileName, FileMode.CreateNew))
+        using (FileStream stream = new FileStream(fileName, FileMode.Create))
         {
             binaryFormatter.Serialize(stream, IsSound);
         }

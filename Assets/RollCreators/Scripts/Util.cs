@@ -9,11 +9,13 @@ public class Util : MonoBehaviour
 
     public static void GenerateField(LevelData levelData, GameObject emptyElementField, GenerationCallback callback)
     {
-        Rect cameraRect = Camera.main.rect;
-        float width = cameraRect.width / (levelData.levelWidth + 2);
-        float height = cameraRect.height / (levelData.levelHeight + 2);
-        float offsetX = width;
-        float offsetY = height;
+        Vector2 beginCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        Vector2 endCamera = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        Rect cameraRect = new Rect(beginCamera, endCamera - beginCamera);
+        float width = cameraRect.width / (levelData.levelWidth + 1);
+        float height = cameraRect.height / (levelData.levelHeight + 1);
+        float offsetX = cameraRect.x + width;
+        float offsetY = cameraRect.y + height;
         if (width > height)
         {
             offsetX += (width - height) * levelData.levelWidth / 2;
@@ -29,8 +31,9 @@ public class Util : MonoBehaviour
             for (int y = 0; y < levelData.levelHeight; y++)
             {
                 GameObject element = Instantiate(emptyElementField, new Vector3(offsetX + x * width, offsetY + y * height), Quaternion.identity);
-                element.transform.localScale = new Vector3(width, height);
-                callback(element, levelData, x, y);
+                Rect r = element.GetComponent<RectTransform>().rect;
+                element.transform.localScale = new Vector3(width / r.width, height / r.height);
+                callback(element, levelData, x, levelData.levelHeight - y - 1);
             }
         }
     }

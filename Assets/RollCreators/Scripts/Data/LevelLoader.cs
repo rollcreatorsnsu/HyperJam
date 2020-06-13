@@ -49,7 +49,11 @@ public static class LevelLoader
 
     public static void Save(string packName, int levelNumber, LevelData levelData) // for internal use only
     {
-        using (FileStream stream = new FileStream($"{packName}/{levelNumber}", FileMode.Open))
+        if (!Directory.Exists($"{packName}"))
+        {
+            Directory.CreateDirectory($"{packName}");
+        }
+        using (FileStream stream = new FileStream($"{packName}/{levelNumber}", FileMode.Create))
         {
             formatter.Serialize(stream, levelData);
         }

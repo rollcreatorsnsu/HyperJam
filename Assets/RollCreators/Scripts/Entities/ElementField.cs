@@ -25,7 +25,7 @@ public class ElementField : MonoBehaviour
     public void SetElement(Element e)
     {
         element = e;
-        GetComponent<SpriteRenderer>().sprite = Util.GetElementSprite(element.type);
+//        GetComponent<SpriteRenderer>().sprite = Util.GetElementSprite(element.type); TODO
         transform.rotation = Quaternion.Euler(0, 0, element.rotation * 90);
         if (element.type == ElementType.RESISTOR)
         {

@@ -41,7 +41,7 @@ public static class GameProgress
 
     public static void Save()
     {
-        using (FileStream stream = new FileStream(fileName, FileMode.CreateNew))
+        using (FileStream stream = new FileStream(fileName, FileMode.Create))
         {
             binaryFormatter.Serialize(stream, progress);
             binaryFormatter.Serialize(stream, resources);
