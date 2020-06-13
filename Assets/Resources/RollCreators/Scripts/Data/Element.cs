@@ -6,6 +6,7 @@ public class Element
     public ElementType type;
     public int connection;
     public int rotation;
+    [NonSerialized] public bool connected;
 
     public Element()
     {

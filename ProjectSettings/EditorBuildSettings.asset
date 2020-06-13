@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/RollCreators/Scenes/Game.unity
     guid: 55b6f578ed68b9c429a7186debcabe34
+  - enabled: 0
+    path: Assets/Resources/RollCreators/Scenes/Editor.unity
+    guid: 48a1f3a158a045844a12d45dd2b65640
   m_configObjects: {}

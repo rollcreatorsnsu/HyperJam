@@ -17,6 +17,7 @@ public class Game : MonoBehaviour
     {
         currentTime = LevelLoader.currentLevelData.levelTime;
         Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
+        LevelLoader.currentLevelData.UpdateConnections();
     }
 
     // Update is called once per frame
@@ -44,13 +45,15 @@ public class Game : MonoBehaviour
 
     public void UpdateField()
     {
+        LevelLoader.currentLevelData.UpdateConnections();
+
         if (LevelLoader.currentLevelData.IsWin())
         {
             levelEndMenu.Show(true);
             return;
         }
 
-        List<Element> condensers = LevelLoader.currentLevelData.IsCondeserDisconnected();
+        List<Element> condensers = LevelLoader.currentLevelData.GetDisconnectedCondensers();
         if (condensers != null)
         {
             foreach (Element condenser in condensers)
@@ -65,7 +68,7 @@ public class Game : MonoBehaviour
     private IEnumerator CondenserOff(Element condenser)
     {
         yield return new WaitForSeconds(5); // TODO: timing
-        if (LevelLoader.currentLevelData.IsCondeserDisconnected().Contains(condenser))
+        if (condenser.connected == false)
         {
             condenser.type = ElementType.CONDENSER_OFF;
             UpdateField();

@@ -50,6 +50,7 @@ public class LevelEndMenu : MonoBehaviour
         wastedTimeText.text = $"{LevelLoader.currentLevelData.levelTime - game.currentTime}";
         remainedTimeText.text = $"{game.currentTime}";
         earnedResourcesText.text = $"+{Mathf.FloorToInt(game.currentTime)}";
+        gameObject.SetActive(true);
     }
 
     public void NextLevel()
