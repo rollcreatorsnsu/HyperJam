@@ -1,0 +1,13 @@
+﻿public enum ElementType
+{
+    NONE,
+    GENERATOR,
+    WIRES,
+    RESISTOR,
+    BROKEN_RESISTOR,
+    INDUCTION,
+    INDUCTION_USED,
+    LAMP,
+    CONDENSER_ON,
+    CONDENSER_OFF
+}

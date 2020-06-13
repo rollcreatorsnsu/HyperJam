@@ -18,6 +18,11 @@ public class LevelEndMenu : MonoBehaviour
     [SerializeField] private Sprite completedButtonSprite;
     [SerializeField] private Sprite failedButtonSprite;
     
+    public bool IsShown()
+    {
+        return gameObject.activeSelf;
+    }
+    
     public void Show(bool completed)
     {
         if (completed)
@@ -64,5 +69,10 @@ public class LevelEndMenu : MonoBehaviour
     public void RetryLevel()
     {
         LevelLoader.Load(LevelLoader.currentPackName, LevelLoader.currentLevelNumber);
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

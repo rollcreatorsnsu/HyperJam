@@ -42,16 +42,16 @@ public static class LevelLoader
 
     public static void GenerateRandomLevel()
     {
-        currentLevelData = new LevelData();
+        currentLevelData = new LevelData(4, 7);
         currentLevelData.GenerateRandom();
         SceneManager.LoadScene("Game");
     }
 
-    public static void Save(string packName, int levelNumber) // for internal use only
+    public static void Save(string packName, int levelNumber, LevelData levelData) // for internal use only
     {
         using (FileStream stream = new FileStream($"{packName}/{levelNumber}", FileMode.Open))
         {
-            formatter.Serialize(stream, currentLevelData);
+            formatter.Serialize(stream, levelData);
         }
     }
 }
