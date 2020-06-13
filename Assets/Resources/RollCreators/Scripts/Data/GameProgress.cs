@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
 
 [Serializable]
 public static class GameProgress
 {
-    private static string fileName = "fastConnection.sav";
+    private static string fileName = $"{Application.persistentDataPath}/fastConnection.sav";
     private static BinaryFormatter binaryFormatter = new BinaryFormatter();
     public static Dictionary<string, int> progress = new Dictionary<string, int>();
     private static int _resources;

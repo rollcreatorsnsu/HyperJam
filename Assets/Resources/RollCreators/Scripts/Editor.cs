@@ -18,12 +18,13 @@ public class Editor : MonoBehaviour
         ElementType.WIRES,
         ElementType.RESISTOR,
         ElementType.INDUCTION,
-        ElementType.LAMP
+        ElementType.LAMP,
+        ElementType.CONDENSER_OFF
     };
 
     private static int[] ELEMENT_CONNECTIONS_EDITOR =
     {
-        0, 15, 7, 3, 10, 4, 5, 6, 13, 15, 10, 10, 8
+        0, 15, 7, 3, 10, 4, 5, 6, 13, 15, 10, 10, 8, 5
     };
 
     [HideInInspector] public EditorCell selectedCell;

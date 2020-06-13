@@ -107,6 +107,9 @@ public class Util : MonoBehaviour
                 return sprites[10];
             case ElementType.LAMP:
                 return sprites[8];
+            case ElementType.CONDENSER_ON:
+            case ElementType.CONDENSER_OFF:
+                return sprites[28];
         }
 
         return null;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Options
 {
-    private static string fileName = "fastConnection.data";
+    private static string fileName = $"{Application.persistentDataPath}/fastConnection.data";
     private static BinaryFormatter binaryFormatter = new BinaryFormatter();
     private static bool _isSound;
 

@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class LevelLoader
@@ -26,7 +27,7 @@ public static class LevelLoader
     
     public static void Load(string packName, int levelNumber)
     {
-        using (FileStream stream = new FileStream($"{packName}/{levelNumber}", FileMode.Open))
+        using (FileStream stream = new FileStream($"{Application.persistentDataPath}/{packName}/{levelNumber}", FileMode.Open))
         {
             currentLevelData = (LevelData) formatter.Deserialize(stream);
         }
@@ -49,7 +50,7 @@ public static class LevelLoader
         {
             Directory.CreateDirectory($"{packName}");
         }
-        using (FileStream stream = new FileStream($"{packName}/{levelNumber}", FileMode.Create))
+        using (FileStream stream = new FileStream($"{packName}/{levelNumber}.txt", FileMode.Create))
         {
             formatter.Serialize(stream, levelData);
         }
