@@ -27,11 +27,11 @@ public static class LevelLoader
     
     public static void Load(string packName, int levelNumber)
     {
-        using (FileStream stream = new FileStream($"{Application.persistentDataPath}/{packName}/{levelNumber}", FileMode.Open))
+        TextAsset textAsset = Resources.Load($"RollCreators/Data/Levels/{packName}/{levelNumber}") as TextAsset;
+        using (MemoryStream stream = new MemoryStream(textAsset.bytes))
         {
-            currentLevelData = (LevelData) formatter.Deserialize(stream);
+            currentLevelData = formatter.Deserialize(stream) as LevelData;;
         }
-
         currentPackName = packName;
         currentLevelNumber = levelNumber;
         SceneManager.LoadScene("Game");
@@ -50,7 +50,7 @@ public static class LevelLoader
         {
             Directory.CreateDirectory($"{packName}");
         }
-        using (FileStream stream = new FileStream($"{packName}/{levelNumber}.txt", FileMode.Create))
+        using (FileStream stream = new FileStream($"{packName}/{levelNumber}.bytes", FileMode.Create))
         {
             formatter.Serialize(stream, levelData);
         }
