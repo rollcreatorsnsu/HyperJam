@@ -38,6 +38,6 @@ public class EditorCell : MonoBehaviour
     public void SetElement(Element e)
     {
         element = e;
-//        GetComponent<SpriteRenderer>().sprite = Util.GetElementSprite(e.type); TODO
+        GetComponent<SpriteRenderer>().sprite = Util.GetElementSprite(e);
     }
 }

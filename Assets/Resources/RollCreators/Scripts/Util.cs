@@ -1,0 +1,141 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Util : MonoBehaviour
+{
+  
+    public delegate void GenerationCallback(GameObject emptyElementField, LevelData levelData, int x, int y);
+
+    public static void GenerateField(LevelData levelData, GameObject emptyElementField, GenerationCallback callback)
+    {
+        Vector2 beginCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        Vector2 endCamera = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        Rect cameraRect = new Rect(beginCamera, endCamera - beginCamera);
+        float width = cameraRect.width / (levelData.levelWidth + 1);
+        float height = cameraRect.height / (levelData.levelHeight + 1);
+        float offsetX = cameraRect.x + width;
+        float offsetY = cameraRect.y + height;
+        if (width > height)
+        {
+            offsetX += (width - height) * levelData.levelWidth / 2;
+            width = height;
+        } 
+        else if (width < height)
+        {
+            offsetY += (height - width) * levelData.levelHeight / 2;
+            height = width;
+        }
+        for (int x = 0; x < levelData.levelWidth; x++)
+        {
+            for (int y = 0; y < levelData.levelHeight; y++)
+            {
+                GameObject element = Instantiate(emptyElementField, new Vector3(offsetX + x * width, offsetY + y * height), Quaternion.identity);
+                Rect r = element.GetComponent<RectTransform>().rect;
+                element.transform.localScale = new Vector3(width / r.width, height / r.height);
+                callback(element, levelData, x, levelData.levelHeight - y - 1);
+            }
+        }
+    }
+
+    /**
+     * private static ElementType[] ELEMENT_TYPES_EDITOR =
+    {
+        ElementType.NONE,
+        ElementType.GENERATOR,
+        ElementType.GENERATOR,
+        ElementType.GENERATOR,
+        ElementType.GENERATOR,
+        ElementType.GENERATOR,
+        ElementType.WIRES,
+        ElementType.WIRES,
+        ElementType.WIRES,
+        ElementType.WIRES,
+        ElementType.RESISTOR,
+        ElementType.INDUCTION,
+        ElementType.LAMP
+    };
+
+    private static int[] ELEMENT_CONNECTIONS_EDITOR =
+    {
+        0, 15, 7, 3, 10, 4, 5, 6, 13, 15, 10, 10, 8
+    };
+     */
+
+    private static int GetDirections(int connections)
+    {
+        int dirs = 0;
+        while (connections != 0)
+        {
+            if ((connections & 1) == 1)
+            {
+                dirs++;
+            }
+            connections >>= 1;
+        }
+
+        return dirs;
+    }
+
+    public static Sprite GetElementSprite(Element element)
+    {
+        Sprite[] sprites = Resources.LoadAll<Sprite>("RollCreators/Sprites/Elements/Elements");
+        switch (element.type)
+        {
+            case ElementType.NONE:
+                return sprites[9];
+            case ElementType.GENERATOR:
+                switch (GetDirections(element.connection))
+                {
+                    case 4:
+                        return sprites[14];
+                    case 3:
+                        return sprites[15];
+                    case 2:
+                        if (element.connection == 10 || element.connection == 5)
+                        {
+                            return sprites[17];
+                        }
+                        else
+                        {
+                            return sprites[16];
+                        }
+                    case 1:
+                        return sprites[18];
+                }
+
+                break;
+            case ElementType.WIRES:
+                switch (GetDirections(element.connection))
+                {
+                    case 4:
+                        return sprites[19];
+                    case 3:
+                        return sprites[11];
+                    case 2:
+                        if (element.connection == 10 || element.connection == 5)
+                        {
+                            return sprites[0];
+                        }
+                        else
+                        {
+                            return sprites[7];
+                        }
+                }
+
+                break;
+            case ElementType.RESISTOR:
+                return sprites[1];
+            case ElementType.BROKEN_RESISTOR:
+                return sprites[2];
+            case ElementType.INDUCTION:
+            case ElementType.INDUCTION_USED:
+                return sprites[10];
+            case ElementType.LAMP:
+                return sprites[8];
+        }
+
+        return null;
+    }
+    
+}
