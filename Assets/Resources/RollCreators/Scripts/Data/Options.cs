@@ -55,7 +55,7 @@ public static class Options
     {
         using (FileStream stream = new FileStream(fileName, FileMode.Open))
         {
-            IsSound = (bool)binaryFormatter.Deserialize(stream);
+            _IsSound = (bool)binaryFormatter.Deserialize(stream);
         }
     }
     

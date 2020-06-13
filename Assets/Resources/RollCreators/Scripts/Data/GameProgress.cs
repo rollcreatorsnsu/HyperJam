@@ -53,7 +53,7 @@ public static class GameProgress
         using (FileStream stream = new FileStream(fileName, FileMode.Open))
         {
             progress = (Dictionary<string, int>)binaryFormatter.Deserialize(stream);
-            resources = (int) binaryFormatter.Deserialize(stream);
+            _resources = (int) binaryFormatter.Deserialize(stream);
         }
     }
 }
