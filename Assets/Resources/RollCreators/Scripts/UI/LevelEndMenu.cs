@@ -58,6 +58,16 @@ public class LevelEndMenu : MonoBehaviour
     {
         if (LevelLoader.currentLevelNumber == 8)
         {
+            if (LevelLoader.currentPackName == "Easy")
+            {
+                LevelLoader.Load("Medium", 1);
+                return;
+            }
+            if (LevelLoader.currentPackName == "Medium")
+            {
+                LevelLoader.Load("Hard", 1);
+                return;
+            }
             SceneManager.LoadScene("Menu");
             return;
         }

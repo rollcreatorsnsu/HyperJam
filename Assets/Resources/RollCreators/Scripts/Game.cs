@@ -72,6 +72,17 @@ public class Game : MonoBehaviour
                     GameProgress.progress[LevelLoader.currentPackName] = LevelLoader.currentLevelNumber + 1;
                 }
             }
+            else
+            {
+                if (LevelLoader.currentPackName == "Easy")
+                {
+                    GameProgress.progress["Medium"] = 1;
+                }
+                else if (LevelLoader.currentPackName == "Medium")
+                {
+                    GameProgress.progress["Hard"] = 1;
+                }
+            }
             GameProgress.resources += Mathf.FloorToInt(currentTime);
             levelEndMenu.Show(true);
             return;

@@ -31,8 +31,8 @@ public static class GameProgress
         else
         {
             progress.Add("Easy", 1);
-            progress.Add("Medium", 1);
-            progress.Add("Hard", 1);
+            progress.Add("Medium", 0);
+            progress.Add("Hard", 0);
             resources = 10;
             Save();
         }

@@ -3112,6 +3112,15 @@ MonoBehaviour:
     type: 3}
   inactiveLevelSprite: {fileID: -9016962421625260483, guid: 6e6582341e4fd7b4ba2d14801564f0ae,
     type: 3}
+  easyPackButton: {fileID: 1596667529}
+  mediumPackButton: {fileID: 200290309}
+  hardPackButton: {fileID: 252395093}
+  currentPackSprite: {fileID: 1431396953790181923, guid: 6e6582341e4fd7b4ba2d14801564f0ae,
+    type: 3}
+  activePackSprite: {fileID: 3872370640917899509, guid: 6e6582341e4fd7b4ba2d14801564f0ae,
+    type: 3}
+  inactivePackSprite: {fileID: 987953469974937989, guid: 6e6582341e4fd7b4ba2d14801564f0ae,
+    type: 3}
 --- !u!1 &1827697667
 GameObject:
   m_ObjectHideFlags: 0
