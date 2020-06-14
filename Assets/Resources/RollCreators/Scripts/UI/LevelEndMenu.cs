@@ -27,8 +27,8 @@ public class LevelEndMenu : MonoBehaviour
         {
             levelEndText.text = "LEVEL COMPLETE!";
             wastedTimeText.color = Color.white;
-            remainedTimeText.color = Color.cyan;
-            earnedResourcesText.color = Color.cyan;
+            remainedTimeText.color = Color.blue;
+            earnedResourcesText.color = Color.blue;
             buttonText.text = "NEXT";
             buttonImage.sprite = completedButtonSprite;
             button.onClick.RemoveAllListeners();
