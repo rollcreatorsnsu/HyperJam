@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Util : MonoBehaviour
 {
@@ -112,5 +113,83 @@ public class Util : MonoBehaviour
 
         return null;
     }
+
+    public static Sprite GetElementStaticSprite(Element element)
+    {
+        Sprite[] sprites = Resources.LoadAll<Sprite>("RollCreators/Sprites/Elements/Elements");
+        switch (element.type)
+        {
+            case ElementType.GENERATOR:
+                return sprites[12];
+            case ElementType.RESISTOR:
+                return sprites[4];
+            case ElementType.BROKEN_RESISTOR:
+                return sprites[5];
+        }
+        return null;
+    }
     
+    public static Sprite GetElementLightSprite(Element element)
+    {
+        Sprite[] sprites = Resources.LoadAll<Sprite>("RollCreators/Sprites/Elements/Elements");
+        switch (element.type)
+        {
+            case ElementType.BROKEN_RESISTOR:
+                return sprites[20];
+            case ElementType.LAMP:
+                return element.connected ? sprites[9] : null;
+        }
+        return null;
+    }
+
+    public static List<Sprite> GetElementElectricitySprites(Element element)
+    {
+        if (!element.connected || element.type == ElementType.NONE) return null;
+        List<Sprite> result = new List<Sprite>();
+        Sprite[] sprites = Resources.LoadAll<Sprite>("RollCreators/Sprites/Elements/Elements");
+        switch (element.type)
+        {
+            case ElementType.WIRES:
+                switch (GetDirections(element.connection))
+                {
+                    case 4:
+                        result.Add(sprites[21]);
+                        result.Add(sprites[27]);
+                        break;
+                    case 3:
+                        result.Add(sprites[21]);
+                        result.Add(sprites[26]);
+                        break;
+                    case 2:
+                        if (element.connection == 10 || element.connection == 5)
+                        {
+                            result.Add(sprites[21]);
+                            break;
+                        }
+                        else
+                        {
+                            result.Add(sprites[23]);
+                            break;
+                        }
+                }
+                break;
+            case ElementType.RESISTOR:
+            case ElementType.BROKEN_RESISTOR:
+                result.Add(sprites[22]);
+                break;
+            case ElementType.INDUCTION:
+            case ElementType.INDUCTION_USED:
+                result.Add(sprites[25]);
+                break;
+            case ElementType.LAMP:
+                result.Add(sprites[24]);
+                break;
+            case ElementType.CONDENSER_ON:
+            case ElementType.CONDENSER_OFF:
+                result.Add(sprites[29]);
+                break;
+
+        }
+        return result;
+    }
 }

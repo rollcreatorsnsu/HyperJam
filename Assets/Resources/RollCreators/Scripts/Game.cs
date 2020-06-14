@@ -17,7 +17,7 @@ public class Game : MonoBehaviour
     {
         currentTime = LevelLoader.currentLevelData.levelTime;
         Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
-        LevelLoader.currentLevelData.UpdateConnections();
+        UpdateField();
     }
 
     // Update is called once per frame
@@ -47,12 +47,6 @@ public class Game : MonoBehaviour
     {
         LevelLoader.currentLevelData.UpdateConnections();
 
-        if (LevelLoader.currentLevelData.IsWin())
-        {
-            levelEndMenu.Show(true);
-            return;
-        }
-
         List<Element> condensers = LevelLoader.currentLevelData.GetDisconnectedCondensers();
         if (condensers != null)
         {
@@ -60,6 +54,17 @@ public class Game : MonoBehaviour
             {
                 StartCoroutine(CondenserOff(condenser));
             }
+        }
+        
+        if (LevelLoader.currentLevelData.IsWin())
+        {
+            if (LevelLoader.currentLevelNumber < 12)
+            {
+                GameProgress.progress[LevelLoader.currentPackName] = LevelLoader.currentLevelNumber + 1;
+            }
+            GameProgress.resources += Mathf.FloorToInt(currentTime);
+            levelEndMenu.Show(true);
+            return;
         }
 
         currentTime += LevelLoader.currentLevelData.GetAddTime();
@@ -83,7 +88,7 @@ public class Game : MonoBehaviour
     private void GenerationCallback(GameObject element, LevelData levelData, int x, int y)
     {
         ElementField elementField = element.GetComponent<ElementField>();
-        elementField.SetElement(levelData.levelStructure[x, y]);
+        elementField.UpdateElementSprite(levelData.levelStructure[x, y]);
     }
     
 }

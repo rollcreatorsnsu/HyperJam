@@ -1,15 +1,20 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ElementField : MonoBehaviour
 {
     public Game game;
     [HideInInspector] public Element element;
+    [SerializeField] private SpriteRenderer staticImage;
+    [SerializeField] private List<SpriteRenderer> electricity;
+    [SerializeField] private SpriteRenderer light;
     private Collider2D collider;
 
     void Start()
     {
         collider = GetComponent<Collider2D>();
+        UpdateElementSprite(element);
     }
     
     // Update is called once per frame
@@ -21,17 +26,44 @@ public class ElementField : MonoBehaviour
             if (hit.collider == collider)
             {
                 element.Turn();
-                transform.rotation = Quaternion.Euler(0, 0, element.rotation * 90);
                 game.UpdateField();
+            }
+
+            if (hit.collider != null)
+            {
+                UpdateElementSprite(element);
             }
         }
     }
 
-    public void SetElement(Element e)
+    public void UpdateElementSprite(Element e)
     {
         element = e;
         GetComponent<SpriteRenderer>().sprite = Util.GetElementSprite(element);
+        staticImage.sprite = Util.GetElementStaticSprite(element);
+        List<Sprite> electricitySprites = Util.GetElementElectricitySprites(element);
+        if (electricitySprites != null)
+        {
+            for (int i = 0; i < electricitySprites.Count; i++)
+            {
+                electricity[i].sprite = electricitySprites[i];
+            }
+
+            for (int i = electricitySprites.Count; i < electricity.Count; i++)
+            {
+                electricity[i].sprite = null;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < electricity.Count; i++)
+            {
+                electricity[i].sprite = null;
+            }
+        }
+        light.sprite = Util.GetElementLightSprite(element);
         transform.rotation = Quaternion.Euler(0, 0, element.rotation * 90);
+        staticImage.gameObject.transform.rotation = Quaternion.Euler(0, 0, -element.rotation * 90);
         if (element.type == ElementType.RESISTOR)
         {
             StartCoroutine(Break());

@@ -55,14 +55,12 @@ public class LevelEndMenu : MonoBehaviour
 
     public void NextLevel()
     {
-        GameProgress.resources += Mathf.FloorToInt(game.currentTime);
-        LevelLoader.currentLevelNumber++;
         if (LevelLoader.currentLevelNumber == 12)
         {
             SceneManager.LoadScene("Menu");
             return;
         }
-        LevelLoader.Load(LevelLoader.currentPackName, LevelLoader.currentLevelNumber);
+        LevelLoader.Load(LevelLoader.currentPackName, LevelLoader.currentLevelNumber + 1);
     }
 
     public void RetryLevel()
