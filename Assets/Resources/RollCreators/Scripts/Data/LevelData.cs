@@ -181,7 +181,8 @@ public class LevelData
             if (induction.type == ElementType.INDUCTION && induction.connected)
             {
                 induction.type = ElementType.INDUCTION_USED;
-                result += 5; //TODO: balance
+                result += 5;
+                levelTime += 5;
             }
         }
 
