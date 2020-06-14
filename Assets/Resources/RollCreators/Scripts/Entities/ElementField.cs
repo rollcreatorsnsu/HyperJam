@@ -10,11 +10,14 @@ public class ElementField : MonoBehaviour
     [SerializeField] private List<SpriteRenderer> electricity;
     [SerializeField] private SpriteRenderer light;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private GameObject timer;
     private Collider2D collider;
+    private RectTransform rect;
 
     void Awake()
     {
         collider = GetComponent<Collider2D>();
+        rect = GetComponent<RectTransform>();
         UpdateElementSprite(element);
         if (element.type == ElementType.RESISTOR)
         {
@@ -30,6 +33,7 @@ public class ElementField : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider == collider)
             {
+                bool isInduction = element.type == ElementType.INDUCTION;
                 if (element.type == ElementType.COLD_RESISTOR || element.type == ElementType.BROKEN_RESISTOR)
                 {
                     element.type = ElementType.RESISTOR;
@@ -41,6 +45,10 @@ public class ElementField : MonoBehaviour
                     element.Turn();
                 }
                 game.UpdateField();
+                if (isInduction && element.type == ElementType.INDUCTION_USED)
+                {
+                    Instantiate(timer,  (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
+                }
             }
         }
     }

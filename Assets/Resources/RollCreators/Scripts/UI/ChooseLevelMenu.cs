@@ -60,7 +60,7 @@ public class ChooseLevelMenu : MonoBehaviour
 
     public void ChooseLevel(int level)
     {
-        if (GameProgress.progress[currentPack] >= level)
+        if (currentPack != null && GameProgress.progress[currentPack] >= level)
         {
             LevelLoader.Load(currentPack, level);
         }
