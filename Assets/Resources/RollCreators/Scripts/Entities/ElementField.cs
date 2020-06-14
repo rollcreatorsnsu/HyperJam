@@ -16,6 +16,10 @@ public class ElementField : MonoBehaviour
     {
         collider = GetComponent<Collider2D>();
         UpdateElementSprite(element);
+        if (element.type == ElementType.RESISTOR)
+        {
+            StartCoroutine(Break());
+        }
     }
     
     // Update is called once per frame
@@ -29,7 +33,7 @@ public class ElementField : MonoBehaviour
                 if (element.type == ElementType.COLD_RESISTOR || element.type == ElementType.BROKEN_RESISTOR)
                 {
                     element.type = ElementType.RESISTOR;
-                    StartCoroutine(Break());
+                    element.resistorLives = 0;
                     GameProgress.resources--;
                 }
                 else
@@ -77,18 +81,31 @@ public class ElementField : MonoBehaviour
 
     private IEnumerator Break()
     {
-        yield return new WaitForSeconds(5); // TODO: timing
-        if (element.type == ElementType.RESISTOR)
+        while (true)
         {
-            if (element.connected)
+            yield return new WaitForSeconds(1);
+            if (element.type == ElementType.RESISTOR)
             {
-                element.type = ElementType.BROKEN_RESISTOR;
+                if (element.connected)
+                {
+                    element.resistorLives++;
+                }
+                else
+                {
+                    element.resistorLives--;
+                }
+
+                if (element.resistorLives <= -5)
+                {
+                    element.type = ElementType.COLD_RESISTOR;
+                    game.UpdateField();
+                } 
+                else if (element.resistorLives >= 5)
+                {
+                    element.type = ElementType.BROKEN_RESISTOR;
+                    game.UpdateField();
+                }
             }
-            else
-            {
-                element.type = ElementType.COLD_RESISTOR;
-            }
-            game.UpdateField();
         }
     }
 

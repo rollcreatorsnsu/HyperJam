@@ -7,6 +7,7 @@ public class Element
     public int connection;
     public int rotation;
     [NonSerialized] public bool connected;
+    [NonSerialized] public int resistorLives = 0;
 
     public Element()
     {
