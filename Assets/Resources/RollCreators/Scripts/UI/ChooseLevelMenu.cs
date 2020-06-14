@@ -38,7 +38,7 @@ public class ChooseLevelMenu : MonoBehaviour
         if (packName == "Easy")
         {
             easyPackButton.sprite = currentPackSprite;
-            color = new Color(0.667f, 0.988f, 0.027f);
+            color = new Color(0.757f, 1f, 0.588f);
         }
         else if (packName == "Hard")
         {

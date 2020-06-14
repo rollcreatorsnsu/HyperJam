@@ -37,7 +37,7 @@ public class ElementField : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit.collider == collider)
+            if (hit.collider == collider && element.type != ElementType.NONE)
             {
                 bool isInduction = element.type == ElementType.INDUCTION;
                 bool connected = element.connected;
@@ -54,7 +54,7 @@ public class ElementField : MonoBehaviour
                     element.Turn();
                     rotationSound.Play();
                 }
-                game.UpdateField();
+                game.UpdateField(true);
                 if (isInduction && element.type == ElementType.INDUCTION_USED)
                 {
                     Instantiate(timer,  (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
@@ -137,15 +137,17 @@ public class ElementField : MonoBehaviour
                     element.type = ElementType.COLD_RESISTOR;
                     GameObject effect = Instantiate(warningColdEffect, transform.position, Quaternion.identity);
                     Destroy(effect, 1);
+                    game.UpdateField(true);
                 } 
                 else if (element.resistorLives >= 5)
                 {
                     element.type = ElementType.BROKEN_RESISTOR;
                     GameObject effect = Instantiate(warningWarmEffect, transform.position, Quaternion.identity);
                     Destroy(effect, 1);
+                    game.UpdateField(true);
                 }
             }
-            game.UpdateField();
+            game.UpdateField(false);
         }
     }
 

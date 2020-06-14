@@ -28,7 +28,7 @@ public class Game : MonoBehaviour
         switch (LevelLoader.currentPackName)
         {
             case "Easy":
-                color = new Color(0.667f, 0.988f, 0.027f);
+                color = new Color(0.757f, 1f, 0.588f);
                 break;
             case "Hard":
                 color = new Color(0.976f, 0.275f, 0.275f);
@@ -42,7 +42,7 @@ public class Game : MonoBehaviour
         currentTime = LevelLoader.currentLevelData.levelTime;
         Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
         elements = FindObjectsOfType<ElementField>();
-        UpdateField();
+        UpdateField(true);
         begin = false;
     }
 
@@ -76,38 +76,42 @@ public class Game : MonoBehaviour
         resourcesText.text = $"{GameProgress.resources}";
     }
 
-    public void UpdateField()
+    public void UpdateField(bool force)
     {
         begin = true;
 
-        LevelLoader.currentLevelData.UpdateConnections();
+        if (force)
+        {
+            LevelLoader.currentLevelData.UpdateConnections();
+
+            List<Element> condensers = LevelLoader.currentLevelData.GetDisconnectedCondensers();
+            if (condensers != null)
+            {
+                foreach (Element condenser in condensers)
+                {
+                    StartCoroutine(CondenserOff(condenser));
+                }
+            }
+
+            if (LevelLoader.currentLevelData.IsWin())
+            {
+                if (!end)
+                {
+                    winSound.Play();
+                }
+
+                end = true;
+                StartCoroutine(Win());
+                return;
+            }
+
+            currentTime += LevelLoader.currentLevelData.GetAddTime();
+        }
 
         foreach (ElementField element in elements)
         {
             element.UpdateElementSprite(element.element);
         }
-
-        List<Element> condensers = LevelLoader.currentLevelData.GetDisconnectedCondensers();
-        if (condensers != null)
-        {
-            foreach (Element condenser in condensers)
-            {
-                StartCoroutine(CondenserOff(condenser));
-            }
-        }
-        
-        if (LevelLoader.currentLevelData.IsWin())
-        {
-            if (!end)
-            {
-                winSound.Play();
-            }
-            end = true;
-            StartCoroutine(Win());
-            return;
-        }
-
-        currentTime += LevelLoader.currentLevelData.GetAddTime();
     }
 
     private IEnumerator Win()
@@ -141,7 +145,7 @@ public class Game : MonoBehaviour
         if (!condenser.connected && !end)
         {
             condenser.type = ElementType.CONDENSER_OFF;
-            UpdateField();
+            UpdateField(true);
         }
     }
 
