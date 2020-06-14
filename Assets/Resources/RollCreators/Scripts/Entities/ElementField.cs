@@ -29,6 +29,7 @@ public class ElementField : MonoBehaviour
                 if (element.type == ElementType.COLD_RESISTOR || element.type == ElementType.BROKEN_RESISTOR)
                 {
                     element.type = ElementType.RESISTOR;
+                    StartCoroutine(Break());
                     GameProgress.resources--;
                 }
                 else
@@ -67,7 +68,7 @@ public class ElementField : MonoBehaviour
         }
         light.sprite = Util.GetElementLightSprite(element);
         transform.rotation = Quaternion.Euler(0, 0, element.rotation * 90);
-        staticImage.gameObject.transform.rotation = Quaternion.Euler(0, 0, -element.rotation * 90);
+        staticImage.gameObject.transform.rotation = Quaternion.Euler(0, 0, -transform.rotation.z);
         if (element.type == ElementType.RESISTOR)
         {
             StartCoroutine(Break());
@@ -76,20 +77,16 @@ public class ElementField : MonoBehaviour
 
     private IEnumerator Break()
     {
-        bool connected = element.connected;
-        while (true)
+        bool connected;
+        do
         {
+            connected = element.connected;
             yield return new WaitForSeconds(5); // TODO: timing
-            if (element.connected != connected)
-            {
-                connected = element.connected;
-                continue;
-            }
-            if (element.type != ElementType.RESISTOR)
-            {
-                continue;
-            }
-            if (element.connected)
+        } while (element.connected != connected);
+
+        if (element.type == ElementType.RESISTOR)
+        {
+            if (connected)
             {
                 element.type = ElementType.BROKEN_RESISTOR;
             }
@@ -100,6 +97,5 @@ public class ElementField : MonoBehaviour
             game.UpdateField();
         }
     }
-    
-    
+
 }
