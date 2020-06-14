@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -87,6 +88,14 @@ public class ElementField : MonoBehaviour
             }
         }
         light.sprite = Util.GetElementLightSprite(element);
+        if (element.type == ElementType.RESISTOR)
+        {
+            light.color = new Color(1, 1, 1, Math.Abs(element.resistorLives) * 0.2f);
+        }
+        else
+        {
+            light.color = Color.white;
+        }
         transform.rotation = Quaternion.Euler(0, 0, element.rotation * 90);
         staticImage.gameObject.transform.rotation = Quaternion.Euler(0, 0, -transform.rotation.z);
     }
@@ -110,14 +119,13 @@ public class ElementField : MonoBehaviour
                 if (element.resistorLives <= -5)
                 {
                     element.type = ElementType.COLD_RESISTOR;
-                    game.UpdateField();
                 } 
                 else if (element.resistorLives >= 5)
                 {
                     element.type = ElementType.BROKEN_RESISTOR;
-                    game.UpdateField();
                 }
             }
+            game.UpdateField();
         }
     }
 

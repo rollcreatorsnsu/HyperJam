@@ -138,6 +138,16 @@ public class Util : MonoBehaviour
         Sprite[] sprites = Resources.LoadAll<Sprite>("RollCreators/Sprites/Elements/Elements");
         switch (element.type)
         {
+            case ElementType.RESISTOR:
+                if (element.resistorLives < 0)
+                {
+                    return sprites[13];
+                }
+                else if (element.resistorLives > 0)
+                {
+                    return sprites[20];
+                }
+                break;
             case ElementType.BROKEN_RESISTOR:
                 return sprites[20];
             case ElementType.COLD_RESISTOR:
