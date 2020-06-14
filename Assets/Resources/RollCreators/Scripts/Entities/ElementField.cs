@@ -39,8 +39,6 @@ public class ElementField : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider == collider && element.type != ElementType.NONE)
             {
-                bool isInduction = element.type == ElementType.INDUCTION;
-                bool connected = element.connected;
                 if ((element.type == ElementType.COLD_RESISTOR || element.type == ElementType.BROKEN_RESISTOR) && GameProgress.resources > 0)
                 {
                     element.type = ElementType.RESISTOR;
@@ -55,15 +53,6 @@ public class ElementField : MonoBehaviour
                     rotationSound.Play();
                 }
                 game.UpdateField(true);
-                if (isInduction && element.type == ElementType.INDUCTION_USED)
-                {
-                    Instantiate(timer,  (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
-                    inductionSound.Play();
-                }
-                if (element.type == ElementType.LAMP && element.connected != connected)
-                {
-                    lampSound.Play();
-                }
             }
 
             if (!begin)
@@ -79,6 +68,16 @@ public class ElementField : MonoBehaviour
         if (element.type != ElementType.RESISTOR && e.type == ElementType.RESISTOR && begin)
         {
             StartCoroutine(Break());
+        }
+        if (e.type == ElementType.INDUCTION && e.connected)
+        {
+            e.type = ElementType.INDUCTION_USED;
+            Instantiate(timer,  (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
+            inductionSound.Play();
+        }
+        if (element.type == ElementType.LAMP && element.connected != e.connected)
+        {
+            lampSound.Play();
         }
         element = e;
         spriteRenderer.sprite = Util.GetElementSprite(element);
