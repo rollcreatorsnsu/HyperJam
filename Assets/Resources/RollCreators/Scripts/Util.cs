@@ -56,8 +56,6 @@ public class Util : MonoBehaviour
         Sprite[] sprites = Resources.LoadAll<Sprite>("RollCreators/Sprites/Elements/Elements");
         switch (element.type)
         {
-            case ElementType.NONE:
-                return sprites[9];
             case ElementType.GENERATOR:
                 switch (GetDirections(element.connection))
                 {
