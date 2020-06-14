@@ -39,6 +39,7 @@ public class ElementField : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider == collider && element.type != ElementType.NONE)
             {
+                bool connected = element.connected;
                 if ((element.type == ElementType.COLD_RESISTOR || element.type == ElementType.BROKEN_RESISTOR) && GameProgress.resources > 0)
                 {
                     element.type = ElementType.RESISTOR;
@@ -53,6 +54,13 @@ public class ElementField : MonoBehaviour
                     rotationSound.Play();
                 }
                 game.UpdateField(true);
+                if (element.connected != connected) // TODO: fix
+                {
+                    if (element.type == ElementType.LAMP)
+                    {
+                        lampSound.Play();
+                    }
+                }
             }
 
             if (!begin)
@@ -117,13 +125,6 @@ public class ElementField : MonoBehaviour
                 el.color = Color.white;
             }
             light.color = Color.white;
-        }
-        if (element.connected != e.connected) // TODO: fix
-        {
-            if (element.type == ElementType.LAMP)
-            {
-                lampSound.Play();
-            }
         }
         element = e;
         if (element.type == ElementType.RESISTOR)
