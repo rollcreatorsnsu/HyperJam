@@ -16,7 +16,6 @@ public class Game : MonoBehaviour
     [SerializeField] private AudioSource looseSound;
     [SerializeField] private List<Image> backImages;
     [SerializeField] private SpriteRenderer background;
-    [SerializeField] private SpriteRenderer grid;
     [HideInInspector] public float currentTime;
     private ElementField[] elements;
     private bool begin = false;
@@ -40,11 +39,8 @@ public class Game : MonoBehaviour
             image.color = color;
         }
         background.color = color;
-        grid.color = color;
         currentTime = LevelLoader.currentLevelData.levelTime;
-        Rect rr = grid.GetComponent<RectTransform>().rect;
-        Rect r = Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
-        grid.transform.localScale = new Vector3(r.width / rr.width, r.height / rr.height, 1);
+        Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
         elements = FindObjectsOfType<ElementField>();
         UpdateField(true);
         begin = false;
@@ -166,6 +162,15 @@ public class Game : MonoBehaviour
     {
         ElementField elementField = element.GetComponent<ElementField>();
         elementField.UpdateElementSprite(levelData.levelStructure[x, y]);
+        elementField.grid.sprite = Util.GetGridSprite(x, y);
+        if (LevelLoader.currentPackName == "Easy")
+        {
+            elementField.grid.color = new Color(0.757f, 1f, 0.588f);
+        }
+        else if (LevelLoader.currentPackName == "Hard")
+        {
+            elementField.grid.color = new Color(0.976f, 0.275f, 0.275f);
+        }
     }
 
     public void Restart()

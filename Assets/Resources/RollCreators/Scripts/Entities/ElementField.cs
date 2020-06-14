@@ -7,6 +7,7 @@ public class ElementField : MonoBehaviour
 {
     public Game game;
     [HideInInspector] public Element element;
+    public SpriteRenderer grid;
     [SerializeField] private SpriteRenderer staticImage;
     [SerializeField] private List<SpriteRenderer> electricity;
     [SerializeField] private SpriteRenderer light;
