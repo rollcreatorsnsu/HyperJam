@@ -15,6 +15,9 @@ public class ElementField : MonoBehaviour
     [SerializeField] private AudioSource rotationSound;
     [SerializeField] private AudioSource lampSound;
     [SerializeField] private AudioSource inductionSound;
+    [SerializeField] private GameObject warningWarmEffect;
+    [SerializeField] private GameObject warningColdEffect;
+    [SerializeField] private GameObject repairEffect;
     private Collider2D collider;
     private RectTransform rect;
     private bool begin = false;
@@ -42,6 +45,8 @@ public class ElementField : MonoBehaviour
                 {
                     element.type = ElementType.RESISTOR;
                     element.resistorLives = 0;
+                    GameObject effect = Instantiate(repairEffect, transform.position, Quaternion.identity);
+                    Destroy(effect, 1);
                     GameProgress.resources--;
                 }
                 else
@@ -130,10 +135,14 @@ public class ElementField : MonoBehaviour
                 if (element.resistorLives <= -5)
                 {
                     element.type = ElementType.COLD_RESISTOR;
+                    GameObject effect = Instantiate(warningColdEffect, transform.position, Quaternion.identity);
+                    Destroy(effect, 1);
                 } 
                 else if (element.resistorLives >= 5)
                 {
                     element.type = ElementType.BROKEN_RESISTOR;
+                    GameObject effect = Instantiate(warningWarmEffect, transform.position, Quaternion.identity);
+                    Destroy(effect, 1);
                 }
             }
             game.UpdateField();

@@ -4038,6 +4038,12 @@ MonoBehaviour:
   rotationSound: {fileID: 2100438609}
   lampSound: {fileID: 1239549759}
   inductionSound: {fileID: 1278087550}
+  warningWarmEffect: {fileID: 621965612383783550, guid: 1b561ebeb384ab6408e5ff57553f1034,
+    type: 3}
+  warningColdEffect: {fileID: 3979374486958382530, guid: 6303871c553836044bfd5515421b6182,
+    type: 3}
+  repairEffect: {fileID: 6380076616480943557, guid: 5d1540f153d683748ae8f0bf4a924f82,
+    type: 3}
 --- !u!222 &1836150058
 CanvasRenderer:
   m_ObjectHideFlags: 0
