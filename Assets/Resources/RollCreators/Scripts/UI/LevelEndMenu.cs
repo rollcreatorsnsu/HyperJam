@@ -33,7 +33,7 @@ public class LevelEndMenu : MonoBehaviour
             buttonImage.sprite = completedButtonSprite;
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(NextLevel);
-            wastedTimeText.text = $"{LevelLoader.currentLevelData.levelTime - game.currentTime:00:00}";
+            wastedTimeText.text = $"{(LevelLoader.currentLevelData.levelTime - game.currentTime)*100:00:00}";
         }
         else
         {
@@ -48,8 +48,8 @@ public class LevelEndMenu : MonoBehaviour
             wastedTimeText.text = "00:00";
         }
 
-        totalTimeText.text = $"{LevelLoader.currentLevelData.levelTime:00:00}";
-        remainedTimeText.text = $"{game.currentTime:00:00}";
+        totalTimeText.text = $"{(LevelLoader.currentLevelData.levelTime)*100:00:00}";
+        remainedTimeText.text = $"{game.currentTime*100:00:00}";
         earnedResourcesText.text = $"+{Mathf.FloorToInt(game.currentTime)}";
         gameObject.SetActive(true);
     }
