@@ -11,8 +11,8 @@ public class Util : MonoBehaviour
         Vector2 beginCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
         Vector2 endCamera = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
         Rect cameraRect = new Rect(beginCamera, endCamera - beginCamera);
-        float width = cameraRect.width / (levelData.levelWidth + 2);
-        float height = cameraRect.height / (levelData.levelHeight + 2);
+        float width = cameraRect.width / (levelData.levelWidth + 1);
+        float height = cameraRect.height / (levelData.levelHeight + 1);
         float offsetX = cameraRect.x + width;
         float offsetY = cameraRect.y + height;
         if (width > height)
