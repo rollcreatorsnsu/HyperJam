@@ -120,7 +120,7 @@ public class Game : MonoBehaviour
 
     private IEnumerator Win()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         if (LevelLoader.currentLevelNumber < 8)
         {
             if (GameProgress.progress[LevelLoader.currentPackName] < LevelLoader.currentLevelNumber + 1)
