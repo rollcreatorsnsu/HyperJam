@@ -21,9 +21,7 @@ public class ChooseLevelMenu : MonoBehaviour
         {
             buttons[i].sprite = inactiveLevelSprite;
         }
-        easyPackButton.sprite = GameProgress.progress["Easy"] > 0 ? activePackSprite : inactivePackSprite;
-        mediumPackButton.sprite = GameProgress.progress["Medium"] > 0 ? activePackSprite : inactivePackSprite;
-        hardPackButton.sprite = GameProgress.progress["Hard"] > 0 ? activePackSprite : inactivePackSprite;
+        ChoosePack("Easy");
     }
 
     public void ChoosePack(string packName)

@@ -165,7 +165,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.085479416, y: 0.2874208}
   m_AnchorMax: {x: 0.92, y: 0.78150463}
-  m_AnchoredPosition: {x: -3, y: 1.4000244}
+  m_AnchoredPosition: {x: -2.9999847, y: 1.4000244}
   m_SizeDelta: {x: -4.799988, y: -8.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6671295
@@ -437,7 +437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120205096}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1211.5995, y: 1080.9922, z: -30.1}
+  m_LocalPosition: {x: 1211.5995, y: 1080.9922, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -915,7 +915,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703613870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11.059275}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1732487589}
@@ -928,7 +928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.49, y: 2.47}
+  m_AnchoredPosition: {x: -19.3, y: 5.14}
   m_SizeDelta: {x: 2.498, y: 2.487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &787503417
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 14.410472
+  m_AspectRatio: 14.503526
 --- !u!222 &857296348
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2118,7 +2118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.741, y: 3.9635}
+  m_AnchoredPosition: {x: -19.8, y: 5.76}
   m_SizeDelta: {x: 0.9, y: 0.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276855671
@@ -2803,7 +2803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3319,7 +3319,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934730463}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.460428, y: 0.45371872, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
