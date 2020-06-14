@@ -65,6 +65,7 @@ public class ElementField : MonoBehaviour
 
     public void UpdateElementSprite(Element e)
     {
+        if (e.type == ElementType.NONE && element.type == ElementType.NONE) return;
         if (element.type != ElementType.RESISTOR && e.type == ElementType.RESISTOR && begin)
         {
             StartCoroutine(Break());
@@ -75,41 +76,60 @@ public class ElementField : MonoBehaviour
             Instantiate(timer,  (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
             inductionSound.Play();
         }
-        if (element.type == ElementType.LAMP && element.connected != e.connected)
+        if (element.type != e.type)
         {
-            lampSound.Play();
+            spriteRenderer.sprite = Util.GetElementSprite(e);
+            staticImage.sprite = Util.GetElementStaticSprite(e);
+            List<Sprite> electricitySprites = Util.GetElementElectricitySprites(e);
+            if (electricitySprites != null)
+            {
+                for (int i = 0; i < electricitySprites.Count; i++)
+                {
+                    electricity[i].sprite = electricitySprites[i];
+                }
+
+                for (int i = electricitySprites.Count; i < electricity.Count; i++)
+                {
+                    electricity[i].sprite = null;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < electricity.Count; i++)
+                {
+                    electricity[i].sprite = null;
+                }
+            }
+            light.sprite = Util.GetElementLightSprite(e);
+        }
+        if (!e.connected && e.type != ElementType.CONDENSER_ON)
+        {
+            foreach (SpriteRenderer el in electricity)
+            {
+                el.color = Color.clear;
+            }
+            light.color = Color.clear;
+        }
+        else
+        {
+            foreach (SpriteRenderer el in electricity)
+            {
+                el.color = Color.white;
+            }
+            light.color = Color.white;
+        }
+        if (element.connected != e.connected) // TODO: fix
+        {
+            if (element.type == ElementType.LAMP)
+            {
+                lampSound.Play();
+            }
         }
         element = e;
-        spriteRenderer.sprite = Util.GetElementSprite(element);
-        staticImage.sprite = Util.GetElementStaticSprite(element);
-        List<Sprite> electricitySprites = Util.GetElementElectricitySprites(element);
-        if (electricitySprites != null)
-        {
-            for (int i = 0; i < electricitySprites.Count; i++)
-            {
-                electricity[i].sprite = electricitySprites[i];
-            }
-
-            for (int i = electricitySprites.Count; i < electricity.Count; i++)
-            {
-                electricity[i].sprite = null;
-            }
-        }
-        else
-        {
-            for (int i = 0; i < electricity.Count; i++)
-            {
-                electricity[i].sprite = null;
-            }
-        }
-        light.sprite = Util.GetElementLightSprite(element);
         if (element.type == ElementType.RESISTOR)
         {
+            light.sprite = Util.GetElementLightSprite(e);
             light.color = new Color(1, 1, 1, Math.Abs(element.resistorLives) * 0.2f);
-        }
-        else
-        {
-            light.color = Color.white;
         }
         transform.rotation = Quaternion.Euler(0, 0, element.rotation * 90);
         staticImage.gameObject.transform.rotation = Quaternion.Euler(0, 0, -transform.rotation.z);

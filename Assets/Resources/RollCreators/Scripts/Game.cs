@@ -95,6 +95,10 @@ public class Game : MonoBehaviour
 
             if (LevelLoader.currentLevelData.IsWin())
             {
+                foreach (ElementField element in elements)
+                {
+                    element.UpdateElementSprite(element.element);
+                }
                 if (!end)
                 {
                     winSound.Play();

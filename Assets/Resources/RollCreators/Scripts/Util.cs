@@ -153,14 +153,14 @@ public class Util : MonoBehaviour
             case ElementType.COLD_RESISTOR:
                 return sprites[13];
             case ElementType.LAMP:
-                return element.connected ? sprites[9] : null;
+                return sprites[9];
         }
         return null;
     }
 
     public static List<Sprite> GetElementElectricitySprites(Element element)
     {
-        if ((!element.connected && element.type != ElementType.CONDENSER_ON) || element.type == ElementType.NONE || element.type == ElementType.CONDENSER_OFF) return null;
+        if (element.type == ElementType.NONE || element.type == ElementType.CONDENSER_OFF) return null;
         List<Sprite> result = new List<Sprite>();
         Sprite[] sprites = Resources.LoadAll<Sprite>("RollCreators/Sprites/Elements/Elements");
         switch (element.type)
