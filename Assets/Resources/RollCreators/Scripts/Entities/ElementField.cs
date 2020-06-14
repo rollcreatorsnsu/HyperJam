@@ -21,6 +21,7 @@ public class ElementField : MonoBehaviour
     private Collider2D collider;
     private RectTransform rect;
     private bool begin = false;
+    private GameObject effect;
 
     void Awake()
     {
@@ -46,6 +47,7 @@ public class ElementField : MonoBehaviour
                     element.resistorLives = 0;
                     spriteRenderer.sprite = Util.GetElementSprite(element);
                     staticImage.sprite = Util.GetElementStaticSprite(element);
+                    DestroyImmediate(this.effect);
                     GameObject effect = Instantiate(repairEffect, transform.position, Quaternion.identity);
                     Destroy(effect, 1);
                     GameProgress.resources--;
@@ -169,8 +171,7 @@ public class ElementField : MonoBehaviour
                     spriteRenderer.sprite = Util.GetElementSprite(element);
                     staticImage.sprite = Util.GetElementStaticSprite(element);
                     light.sprite = Util.GetElementLightSprite(element);
-                    GameObject effect = Instantiate(warningColdEffect, transform.position, Quaternion.identity);
-                    Destroy(effect, 1);
+                    effect = Instantiate(warningColdEffect, (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
                     game.UpdateField(true);
                 } 
                 else if (element.resistorLives >= 5)
@@ -179,8 +180,7 @@ public class ElementField : MonoBehaviour
                     spriteRenderer.sprite = Util.GetElementSprite(element);
                     staticImage.sprite = Util.GetElementStaticSprite(element);
                     light.sprite = Util.GetElementLightSprite(element);
-                    GameObject effect = Instantiate(warningWarmEffect, transform.position, Quaternion.identity);
-                    Destroy(effect, 1);
+                    effect = Instantiate(warningWarmEffect, (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
                     game.UpdateField(true);
                 }
             }
