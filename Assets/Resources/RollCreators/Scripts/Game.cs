@@ -65,7 +65,7 @@ public class Game : MonoBehaviour
         
         if (LevelLoader.currentLevelData.IsWin())
         {
-            if (LevelLoader.currentLevelNumber < 12)
+            if (LevelLoader.currentLevelNumber < 8)
             {
                 if (GameProgress.progress[LevelLoader.currentPackName] < LevelLoader.currentLevelNumber + 1)
                 {

@@ -679,7 +679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &480216404
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1302,7 +1302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &947869241
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2727,7 +2727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1601226214
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3096,18 +3096,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
-  - {fileID: 1208594099}
-  - {fileID: 1410161388}
-  - {fileID: 1227612753}
-  - {fileID: 1119002034}
-  - {fileID: 657209766}
-  - {fileID: 134016644}
-  - {fileID: 1543023753}
-  - {fileID: 1302274196}
-  - {fileID: 947869242}
-  - {fileID: 1827697669}
-  - {fileID: 480216405}
-  - {fileID: 1601226215}
+  - {fileID: 1208594100}
+  - {fileID: 1410161389}
+  - {fileID: 1227612754}
+  - {fileID: 1119002035}
+  - {fileID: 657209767}
+  - {fileID: 134016645}
+  - {fileID: 1543023754}
+  - {fileID: 1302274197}
+  - {fileID: 947869243}
+  - {fileID: 1827697670}
+  - {fileID: 480216406}
+  - {fileID: 1601226216}
+  activeLevelSprite: {fileID: -2757062313598379230, guid: 6e6582341e4fd7b4ba2d14801564f0ae,
+    type: 3}
+  inactiveLevelSprite: {fileID: -9016962421625260483, guid: 6e6582341e4fd7b4ba2d14801564f0ae,
+    type: 3}
 --- !u!1 &1827697667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3126,7 +3130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1827697668
 RectTransform:
   m_ObjectHideFlags: 0

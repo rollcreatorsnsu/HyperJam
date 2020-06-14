@@ -56,7 +56,7 @@ public class LevelEndMenu : MonoBehaviour
 
     public void NextLevel()
     {
-        if (LevelLoader.currentLevelNumber == 12)
+        if (LevelLoader.currentLevelNumber == 8)
         {
             SceneManager.LoadScene("Menu");
             return;
