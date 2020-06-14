@@ -1,67 +1,7 @@
 fileFormatVersion: 2
-guid: 5b3c845e2e2e42249acbc8a55ea230da
+guid: 7d5c777a9b45da5438b68368644f999a
 TextureImporter:
   internalIDToNameTable:
-  - first:
-      213: -7301345194361724741
-    second: Elements_v2_0
-  - first:
-      213: -5776333556609798723
-    second: Elements_v2_1
-  - first:
-      213: 8496409899907359436
-    second: Elements_v2_2
-  - first:
-      213: -3262582911642014848
-    second: Elements_v2_3
-  - first:
-      213: 4070052085497235257
-    second: Elements_v2_4
-  - first:
-      213: 3162183658146335587
-    second: Elements_v2_5
-  - first:
-      213: -2058773885328235300
-    second: Elements_v2_6
-  - first:
-      213: 4769910572066484269
-    second: Elements_v2_7
-  - first:
-      213: -4907182422297332419
-    second: Elements_v2_8
-  - first:
-      213: 4396316145218266236
-    second: Elements_v2_9
-  - first:
-      213: 3737689570551126315
-    second: Elements_v2_10
-  - first:
-      213: 2163633477599603651
-    second: Elements_v2_11
-  - first:
-      213: -6819543941595777220
-    second: Elements_v2_12
-  - first:
-      213: -1061197214670653477
-    second: Elements_v2_13
-  - first:
-      213: -9113740803919633693
-    second: Elements_v2_14
-  - first:
-      213: -4402812534570321001
-    second: Elements_v2_15
-  - first:
-      213: -3940915106641597075
-    second: Elements_v2_16
-  - first:
-      213: 4718787014626998627
-    second: Elements_v2_17
-  - first:
-      213: 1041442551891132060
-    second: Elements_v2_18
-  - first:
-      213: -5048057840526520802
-    second: Elements_v2_19
   - first:
       213: -6519106895325619043
     second: Elements_0
@@ -138,81 +78,6 @@ TextureImporter:
       213: -2694245604118875905
     second: Elements_24
   - first:
-      213: -8154612416689025936
-    second: Elements_0
-  - first:
-      213: 2931490174118437893
-    second: Elements_1
-  - first:
-      213: -882975470484649181
-    second: Elements_2
-  - first:
-      213: -7586604782990761423
-    second: Elements_3
-  - first:
-      213: -3617706114909296353
-    second: Elements_4
-  - first:
-      213: 1499964702460529196
-    second: Elements_5
-  - first:
-      213: -3770231598135898444
-    second: Elements_6
-  - first:
-      213: 5767300083616190624
-    second: Elements_7
-  - first:
-      213: -4841489287258230998
-    second: Elements_8
-  - first:
-      213: 5202080491664805205
-    second: Elements_9
-  - first:
-      213: -7653392979900780961
-    second: Elements_10
-  - first:
-      213: 7565051462355425666
-    second: Elements_11
-  - first:
-      213: 3177818309445446412
-    second: Elements_12
-  - first:
-      213: -2530307369494658151
-    second: Elements_13
-  - first:
-      213: 4943538959471609340
-    second: Elements_14
-  - first:
-      213: -8142689068636005130
-    second: Elements_15
-  - first:
-      213: 4405303613999478283
-    second: Elements_16
-  - first:
-      213: 4503429826157403988
-    second: Elements_17
-  - first:
-      213: 2845677817792275985
-    second: Elements_18
-  - first:
-      213: 5214075446170917248
-    second: Elements_19
-  - first:
-      213: 4411540793386333150
-    second: Elements_20
-  - first:
-      213: -7049055213648270646
-    second: Elements_21
-  - first:
-      213: 6657222151803238606
-    second: Elements_22
-  - first:
-      213: 1617820973141582926
-    second: Elements_23
-  - first:
-      213: -3735851582295923102
-    second: Elements_24
-  - first:
       213: -6403803790503420145
     second: Elements_25
   - first:
@@ -227,699 +92,6 @@ TextureImporter:
   - first:
       213: -7573799181316810085
     second: Elements_29
-  - first:
-      213: -8205457896007098419
-    second: Elements_25
-  - first:
-      213: -6686792480270706000
-    second: Elements_26
-  - first:
-      213: 5049709450658159529
-    second: Elements_27
-  - first:
-      213: -6213982232572913486
-    second: Elements_28
-  - first:
-      213: -5595089627607841887
-    second: Elements_29
-  - first:
-      213: 5230441614312333045
-    second: Elements_30
-  - first:
-      213: 7461543255553529663
-    second: Elements_31
-  - first:
-      213: 9114489040544593668
-    second: Elements_32
-  - first:
-      213: -6559159659016015594
-    second: Elements_33
-  - first:
-      213: 5963383144456840280
-    second: Elements_34
-  - first:
-      213: -3574196961985176656
-    second: Elements_35
-  - first:
-      213: 4919467755472748164
-    second: Elements_36
-  - first:
-      213: 8290288510357486969
-    second: Elements_37
-  - first:
-      213: 6562689390785424403
-    second: Elements_38
-  - first:
-      213: 2705544820642628926
-    second: Elements_39
-  - first:
-      213: -7043488871221892437
-    second: Elements_40
-  - first:
-      213: -7742234839986208777
-    second: Elements_41
-  - first:
-      213: 26560681860826137
-    second: Elements_42
-  - first:
-      213: 5662939735919958399
-    second: Elements_43
-  - first:
-      213: 4290295043606434755
-    second: Elements_44
-  - first:
-      213: 2765244173454553892
-    second: Elements_45
-  - first:
-      213: 3275979011988066945
-    second: Elements_46
-  - first:
-      213: -3220792293775487071
-    second: Elements_47
-  - first:
-      213: -4679621121949371071
-    second: Elements_48
-  - first:
-      213: 8796632235484579413
-    second: Elements_49
-  - first:
-      213: -7340925199939846500
-    second: Elements_50
-  - first:
-      213: 5557907929817867197
-    second: Elements_51
-  - first:
-      213: -7650788675525128457
-    second: Elements_52
-  - first:
-      213: -5329925147065039111
-    second: Elements_53
-  - first:
-      213: 7790106217563163014
-    second: Elements_54
-  - first:
-      213: 5512199350384368935
-    second: Elements_55
-  - first:
-      213: 5991013983243180530
-    second: Elements_56
-  - first:
-      213: 7417949770358359750
-    second: Elements_57
-  - first:
-      213: -8679350056855131729
-    second: Elements_58
-  - first:
-      213: -4219259964472593516
-    second: Elements_59
-  - first:
-      213: -4497015439291813663
-    second: Elements_60
-  - first:
-      213: 3909831672722452607
-    second: Elements_61
-  - first:
-      213: -6952965862016855175
-    second: Elements_62
-  - first:
-      213: 5810612344555038108
-    second: Elements_63
-  - first:
-      213: 6054348569823792557
-    second: Elements_64
-  - first:
-      213: 3227407189397398590
-    second: Elements_65
-  - first:
-      213: 1933582377750547081
-    second: Elements_66
-  - first:
-      213: -6435239295530534258
-    second: Elements_67
-  - first:
-      213: -1449449424717242083
-    second: Elements_68
-  - first:
-      213: -7211382989734437543
-    second: Elements_69
-  - first:
-      213: 470083633968728021
-    second: Elements_70
-  - first:
-      213: 8835756186376028791
-    second: Elements_71
-  - first:
-      213: -5584693395259666522
-    second: Elements_72
-  - first:
-      213: 6435365161384242742
-    second: Elements_73
-  - first:
-      213: -9092837416042731552
-    second: Elements_74
-  - first:
-      213: -3836623794193840025
-    second: Elements_75
-  - first:
-      213: -641296661476066848
-    second: Elements_76
-  - first:
-      213: -7119204672722106999
-    second: Elements_77
-  - first:
-      213: -8263686019233879314
-    second: Elements_78
-  - first:
-      213: 5343359883172332582
-    second: Elements_79
-  - first:
-      213: 6246218095643232489
-    second: Elements_80
-  - first:
-      213: -2682230111862088452
-    second: Elements_81
-  - first:
-      213: -3586742813932506270
-    second: Elements_82
-  - first:
-      213: 3202952427855468554
-    second: Elements_83
-  - first:
-      213: 3633645144461940884
-    second: Elements_84
-  - first:
-      213: -6021533322004906670
-    second: Elements_85
-  - first:
-      213: -8037637600557714637
-    second: Elements_86
-  - first:
-      213: -3131824368494329683
-    second: Elements_87
-  - first:
-      213: -8683354941298717009
-    second: Elements_88
-  - first:
-      213: -5081463732730781914
-    second: Elements_89
-  - first:
-      213: 7070659045357782502
-    second: Elements_90
-  - first:
-      213: -4007519126294732696
-    second: Elements_91
-  - first:
-      213: 223193764836041643
-    second: Elements_92
-  - first:
-      213: -4945450608640824614
-    second: Elements_93
-  - first:
-      213: 3800885437349831605
-    second: Elements_94
-  - first:
-      213: -7132177795080647042
-    second: Elements_95
-  - first:
-      213: 7411530947877510168
-    second: Elements_96
-  - first:
-      213: -1321808005333164696
-    second: Elements_97
-  - first:
-      213: 3281936306754612563
-    second: Elements_98
-  - first:
-      213: 3221199901861707360
-    second: Elements_99
-  - first:
-      213: -7707245047200800647
-    second: Elements_100
-  - first:
-      213: 8324286122278973981
-    second: Elements_101
-  - first:
-      213: 626786876859388484
-    second: Elements_102
-  - first:
-      213: -355309766901647491
-    second: Elements_103
-  - first:
-      213: 446612465095498432
-    second: Elements_104
-  - first:
-      213: 9152418882706087861
-    second: Elements_105
-  - first:
-      213: 4555215553748473969
-    second: Elements_106
-  - first:
-      213: 7363793071673930910
-    second: Elements_107
-  - first:
-      213: 1164539927680062239
-    second: Elements_108
-  - first:
-      213: 5295871793139356630
-    second: Elements_109
-  - first:
-      213: -6485727092821702049
-    second: Elements_110
-  - first:
-      213: -6682212625707702382
-    second: Elements_111
-  - first:
-      213: 716432557717538252
-    second: Elements_112
-  - first:
-      213: 6917359118196909433
-    second: Elements_113
-  - first:
-      213: -3840644412016533682
-    second: Elements_114
-  - first:
-      213: 1025595729400396024
-    second: Elements_115
-  - first:
-      213: 6346614436769089367
-    second: Elements_116
-  - first:
-      213: 220189932902626466
-    second: Elements_117
-  - first:
-      213: 3602584360521271395
-    second: Elements_118
-  - first:
-      213: 3425873795939130319
-    second: Elements_119
-  - first:
-      213: -1986087297509574541
-    second: Elements_120
-  - first:
-      213: -8091352014693220510
-    second: Elements_121
-  - first:
-      213: 4019733971795009073
-    second: Elements_122
-  - first:
-      213: -4570737233753583323
-    second: Elements_123
-  - first:
-      213: 3818646581053974315
-    second: Elements_124
-  - first:
-      213: -8309211276690397055
-    second: Elements_125
-  - first:
-      213: 7370125913009852864
-    second: Elements_126
-  - first:
-      213: 3714877030430073176
-    second: Elements_127
-  - first:
-      213: 9126611970657693626
-    second: Elements_128
-  - first:
-      213: 921868199714902449
-    second: Elements_129
-  - first:
-      213: -6259630520966819090
-    second: Elements_130
-  - first:
-      213: 8253475426344903050
-    second: Elements_131
-  - first:
-      213: -2501256641325900415
-    second: Elements_132
-  - first:
-      213: 4807046710415269601
-    second: Elements_133
-  - first:
-      213: -2984367149017358508
-    second: Elements_134
-  - first:
-      213: 7360569053983337229
-    second: Elements_135
-  - first:
-      213: -5397510290356020464
-    second: Elements_136
-  - first:
-      213: 8160714090208827803
-    second: Elements_137
-  - first:
-      213: 1110053901201481992
-    second: Elements_138
-  - first:
-      213: 6949705904647702173
-    second: Elements_139
-  - first:
-      213: 3021465023017321569
-    second: Elements_140
-  - first:
-      213: -8384137568784014907
-    second: Elements_141
-  - first:
-      213: -7974150234346859125
-    second: Elements_142
-  - first:
-      213: -4080335264559816360
-    second: Elements_143
-  - first:
-      213: -5342593358278133108
-    second: Elements_144
-  - first:
-      213: -1679699432824922771
-    second: Elements_145
-  - first:
-      213: 4521415263239739325
-    second: Elements_146
-  - first:
-      213: 142135435107775829
-    second: Elements_147
-  - first:
-      213: 424854726515259453
-    second: Elements_148
-  - first:
-      213: 6335672174155306672
-    second: Elements_149
-  - first:
-      213: -6140445383587436890
-    second: Elements_150
-  - first:
-      213: 1953528580662969655
-    second: Elements_151
-  - first:
-      213: 3160318752501414453
-    second: Elements_152
-  - first:
-      213: -4161744483675668433
-    second: Elements_153
-  - first:
-      213: -708231648398230627
-    second: Elements_154
-  - first:
-      213: -5546586553917899976
-    second: Elements_155
-  - first:
-      213: 461432259111005096
-    second: Elements_156
-  - first:
-      213: -729816751251606400
-    second: Elements_157
-  - first:
-      213: 1721978950547725529
-    second: Elements_158
-  - first:
-      213: -2057066031398539675
-    second: Elements_159
-  - first:
-      213: 582567459247949310
-    second: Elements_160
-  - first:
-      213: 8124632071688811009
-    second: Elements_161
-  - first:
-      213: 2601469943314435878
-    second: Elements_162
-  - first:
-      213: -2867558842473574192
-    second: Elements_163
-  - first:
-      213: 2135316812197158718
-    second: Elements_164
-  - first:
-      213: -2358448216010191432
-    second: Elements_165
-  - first:
-      213: 3223978958740639717
-    second: Elements_166
-  - first:
-      213: 3040644994084028058
-    second: Elements_167
-  - first:
-      213: 1393357199198402432
-    second: Elements_168
-  - first:
-      213: 4896755681027178977
-    second: Elements_169
-  - first:
-      213: -2130179584678819686
-    second: Elements_170
-  - first:
-      213: -59348423739624575
-    second: Elements_171
-  - first:
-      213: 6572768087111345680
-    second: Elements_172
-  - first:
-      213: 3456548745385490129
-    second: Elements_173
-  - first:
-      213: 1856462663386319071
-    second: Elements_174
-  - first:
-      213: 501647825060324218
-    second: Elements_175
-  - first:
-      213: 2379151404713115646
-    second: Elements_176
-  - first:
-      213: 5233649772638506692
-    second: Elements_177
-  - first:
-      213: -321761632673116138
-    second: Elements_178
-  - first:
-      213: 8765769937230047878
-    second: Elements_179
-  - first:
-      213: -8319901267517429203
-    second: Elements_180
-  - first:
-      213: -920312437944400819
-    second: Elements_181
-  - first:
-      213: -3197441292215707183
-    second: Elements_182
-  - first:
-      213: -8763624839486361514
-    second: Elements_183
-  - first:
-      213: -2357833487577388926
-    second: Elements_184
-  - first:
-      213: -2134918072368644796
-    second: Elements_185
-  - first:
-      213: 839295789836237579
-    second: Elements_186
-  - first:
-      213: -5988599310897605802
-    second: Elements_187
-  - first:
-      213: -2306354146761800025
-    second: Elements_188
-  - first:
-      213: 773384303589654321
-    second: Elements_189
-  - first:
-      213: 5657701011850848863
-    second: Elements_190
-  - first:
-      213: -8506008997128833628
-    second: Elements_191
-  - first:
-      213: -3694782824542777049
-    second: Elements_192
-  - first:
-      213: 5768705806938024276
-    second: Elements_193
-  - first:
-      213: 7604004526101186266
-    second: Elements_194
-  - first:
-      213: 4917240028287305948
-    second: Elements_195
-  - first:
-      213: 1575719380798945207
-    second: Elements_196
-  - first:
-      213: -9179850314604837023
-    second: Elements_197
-  - first:
-      213: 4389273810157863894
-    second: Elements_198
-  - first:
-      213: -5609543178815702270
-    second: Elements_199
-  - first:
-      213: 6162144341532858022
-    second: Elements_200
-  - first:
-      213: -7317722336642414519
-    second: Elements_201
-  - first:
-      213: -751195379547454803
-    second: Elements_202
-  - first:
-      213: -5519756121315267633
-    second: Elements_203
-  - first:
-      213: 8852963693611917989
-    second: Elements_204
-  - first:
-      213: -5411605231747054352
-    second: Elements_205
-  - first:
-      213: -7520810382875300419
-    second: Elements_206
-  - first:
-      213: -7767437871411255556
-    second: Elements_207
-  - first:
-      213: -6640084258679817105
-    second: Elements_208
-  - first:
-      213: 2564703228659637233
-    second: Elements_209
-  - first:
-      213: -5973407290516558984
-    second: Elements_210
-  - first:
-      213: -2684658337671393595
-    second: Elements_211
-  - first:
-      213: -328051515506830274
-    second: Elements_212
-  - first:
-      213: -6144538459945223695
-    second: Elements_213
-  - first:
-      213: 5602377645388446070
-    second: Elements_214
-  - first:
-      213: -824987103715378312
-    second: Elements_215
-  - first:
-      213: 1057009220171215979
-    second: Elements_216
-  - first:
-      213: 2121204433985330786
-    second: Elements_217
-  - first:
-      213: -5436388722444244948
-    second: Elements_218
-  - first:
-      213: -8048910448833976398
-    second: Elements_219
-  - first:
-      213: 4686516806108453101
-    second: Elements_220
-  - first:
-      213: 6388756551546241347
-    second: Elements_221
-  - first:
-      213: 8909022589729395178
-    second: Elements_222
-  - first:
-      213: 5140680337294980641
-    second: Elements_223
-  - first:
-      213: -4552027416526277456
-    second: Elements_224
-  - first:
-      213: -9049349924858073030
-    second: Elements_225
-  - first:
-      213: -5554576640365665987
-    second: Elements_226
-  - first:
-      213: 3954904316841154650
-    second: Elements_227
-  - first:
-      213: 3452248225148570322
-    second: Elements_228
-  - first:
-      213: 3600445948089058733
-    second: Elements_229
-  - first:
-      213: -5002898453816303504
-    second: Elements_230
-  - first:
-      213: -8974383618359119272
-    second: Elements_231
-  - first:
-      213: -2138549847052926720
-    second: Elements_232
-  - first:
-      213: 188013349920713392
-    second: Elements_233
-  - first:
-      213: -5762949623308071458
-    second: Elements_234
-  - first:
-      213: 3088022804359226763
-    second: Elements_235
-  - first:
-      213: 501470367383534720
-    second: Elements_236
-  - first:
-      213: 7741338921320967630
-    second: Elements_237
-  - first:
-      213: 7725628028461243885
-    second: Elements_238
-  - first:
-      213: -6169969209110118915
-    second: Elements_239
-  - first:
-      213: 9094818485783199829
-    second: Elements_240
-  - first:
-      213: 1150260087021149550
-    second: Elements_241
-  - first:
-      213: -5569580003943775699
-    second: Elements_242
-  - first:
-      213: -731079124913052428
-    second: Elements_243
-  - first:
-      213: 4865193842408139677
-    second: Elements_244
-  - first:
-      213: 3595486754830486769
-    second: Elements_245
-  - first:
-      213: -4886149099797033514
-    second: Elements_246
-  - first:
-      213: 1310753231178886676
-    second: Elements_247
-  - first:
-      213: 8904941054116042465
-    second: Elements_248
-  - first:
-      213: -8861620727471730372
-    second: Elements_249
-  - first:
-      213: 6720910055464245125
-    second: Elements_250
-  - first:
-      213: -7208832232290425242
-    second: Elements_251
-  - first:
-      213: 5124901094074003126
-    second: Elements_252
-  - first:
-      213: 3415630696153343689
-    second: Elements_253
-  - first:
-      213: -3467560899659994106
-    second: Elements_254
-  - first:
-      213: 495878031134519544
-    second: Elements_255
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -1042,8 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07cc246463ff4de80800000000000000
-      internalID: -8154612416689025936
+      spriteID: d9c115381da7785a0800000000000000
+      internalID: -6519106895325619043
       vertices: []
       indices: 
       edges: []
@@ -1063,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 504a0ea18cebea820800000000000000
-      internalID: 2931490174118437893
+      spriteID: 1a778ac81e9a73ff0800000000000000
+      internalID: -56389684126255199
       vertices: []
       indices: 
       edges: []
@@ -1084,8 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32b0160ec7a0fb3f0800000000000000
-      internalID: -882975470484649181
+      spriteID: 6b2658a9d9590ce60800000000000000
+      internalID: 7980543043835355830
       vertices: []
       indices: 
       edges: []
@@ -1105,8 +277,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1326e8a3527f6b690800000000000000
-      internalID: -7586604782990761423
+      spriteID: 668bd91945ca15f50800000000000000
+      internalID: 6868460385936980070
       vertices: []
       indices: 
       edges: []
@@ -1126,8 +298,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f19a217b4735bcdc0800000000000000
-      internalID: -3617706114909296353
+      spriteID: 4fe3e649e995750c0800000000000000
+      internalID: -4587099157823602956
       vertices: []
       indices: 
       edges: []
@@ -1147,8 +319,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2ac8c123f1f0d410800000000000000
-      internalID: 1499964702460529196
+      spriteID: b3d325587d7c7dfe0800000000000000
+      internalID: -1164242250183328453
       vertices: []
       indices: 
       edges: []
@@ -1168,8 +340,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4be082846527dabc0800000000000000
-      internalID: -3770231598135898444
+      spriteID: 313f87139174378d0800000000000000
+      internalID: -2849855965665627373
       vertices: []
       indices: 
       edges: []
@@ -1189,8 +361,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a0160d9ed0990050800000000000000
-      internalID: 5767300083616190624
+      spriteID: f8e2377cc1e2f7ba0800000000000000
+      internalID: -6089097470041444721
       vertices: []
       indices: 
       edges: []
@@ -1210,8 +382,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2f2d1105239fccb0800000000000000
-      internalID: -4841489287258230998
+      spriteID: bac06abf925e5aff0800000000000000
+      internalID: -25362254402286421
       vertices: []
       indices: 
       edges: []
@@ -1231,8 +403,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55d8ba635a0813840800000000000000
-      internalID: 5202080491664805205
+      spriteID: cbe994cc5c37bbc90800000000000000
+      internalID: -7152996289774772548
       vertices: []
       indices: 
       edges: []
@@ -1252,8 +424,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5eab8a52afa9c590800000000000000
-      internalID: -7653392979900780961
+      spriteID: e82d2368f064ecc10800000000000000
+      internalID: 2075673510754308750
       vertices: []
       indices: 
       edges: []
@@ -1273,8 +445,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2899e3149367cf860800000000000000
-      internalID: 7565051462355425666
+      spriteID: 35e0f5b7953ba8a30800000000000000
+      internalID: 4218381197889179219
       vertices: []
       indices: 
       edges: []
@@ -1294,8 +466,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0b6a376ae0e91c20800000000000000
-      internalID: 3177818309445446412
+      spriteID: 9c4f772abd32ae680800000000000000
+      internalID: -8725121901846334263
       vertices: []
       indices: 
       edges: []
@@ -1315,8 +487,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 993c7b48ada82ecd0800000000000000
-      internalID: -2530307369494658151
+      spriteID: d2ad0aa515dbf86d0800000000000000
+      internalID: -2985959870812857811
       vertices: []
       indices: 
       edges: []
@@ -1336,8 +508,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf50c9cdd7afa9440800000000000000
-      internalID: 4943538959471609340
+      spriteID: c6602fcc394e4a150800000000000000
+      internalID: 5883078336702449260
       vertices: []
       indices: 
       edges: []
@@ -1357,8 +529,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fc9e731f6b5ffe80800000000000000
-      internalID: -8142689068636005130
+      spriteID: 73315e595bacee7e0800000000000000
+      internalID: -1734225925238353097
       vertices: []
       indices: 
       edges: []
@@ -1378,8 +550,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b06fe20fb48c22d30800000000000000
-      internalID: 4405303613999478283
+      spriteID: 1a603a9be8b8c3c10800000000000000
+      internalID: 2034654576780707489
       vertices: []
       indices: 
       edges: []
@@ -1399,8 +571,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45fd20311956f7e30800000000000000
-      internalID: 4503429826157403988
+      spriteID: 56b8342cc343da6e0800000000000000
+      internalID: -1824744838453294235
       vertices: []
       indices: 
       edges: []
@@ -1420,8 +592,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 116a7b2f5e0ed7720800000000000000
-      internalID: 2845677817792275985
+      spriteID: 0182c0cc996786010800000000000000
+      internalID: 1182325305110177808
       vertices: []
       indices: 
       edges: []
@@ -1441,8 +613,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0899a113efd1c5840800000000000000
-      internalID: 5214075446170917248
+      spriteID: c8db8046674653b90800000000000000
+      internalID: -7262788364417843828
       vertices: []
       indices: 
       edges: []
@@ -1462,8 +634,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed3ffed6af0f83d30800000000000000
-      internalID: 4411540793386333150
+      spriteID: d01bd32608f5025b0800000000000000
+      internalID: -5395207348581191411
       vertices: []
       indices: 
       edges: []
@@ -1483,8 +655,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aca216471a9bc2e90800000000000000
-      internalID: -7049055213648270646
+      spriteID: 098f8f466a44503f0800000000000000
+      internalID: -935265866160211824
       vertices: []
       indices: 
       edges: []
@@ -1504,8 +676,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec8f71d8644336c50800000000000000
-      internalID: 6657222151803238606
+      spriteID: 75ce5a7a542d69df0800000000000000
+      internalID: -173720338999940009
       vertices: []
       indices: 
       edges: []
@@ -1525,8 +697,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e44e74e7a97a37610800000000000000
-      internalID: 1617820973141582926
+      spriteID: 6c4552532913dae80800000000000000
+      internalID: -8165816045326215994
       vertices: []
       indices: 
       edges: []
@@ -1546,8 +718,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 266abaf77c6972cc0800000000000000
-      internalID: -3735851582295923102
+      spriteID: ff036d4d5ed1c9ad0800000000000000
+      internalID: -2694245604118875905
       vertices: []
       indices: 
       edges: []
@@ -1567,8 +739,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcf9219948b502e80800000000000000
-      internalID: -8205457896007098419
+      spriteID: f0f5ebf916e1127a0800000000000000
+      internalID: -6403803790503420145
       vertices: []
       indices: 
       edges: []
@@ -1588,8 +760,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ba16b6daadb333a0800000000000000
-      internalID: -6686792480270706000
+      spriteID: 1f3e6ad58630ccb70800000000000000
+      internalID: 8920508708696810481
       vertices: []
       indices: 
       edges: []
@@ -1609,8 +781,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ab9969adfb241640800000000000000
-      internalID: 5049709450658159529
+      spriteID: 185a4bff44eb6cc20800000000000000
+      internalID: 3226475386614621569
       vertices: []
       indices: 
       edges: []
@@ -1630,8 +802,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b817e2251083c9a0800000000000000
-      internalID: -6213982232572913486
+      spriteID: 7fcc1ca11a877c580800000000000000
+      internalID: -8806937912965739273
       vertices: []
       indices: 
       edges: []
@@ -1651,8 +823,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a346f3b0af3a52b0800000000000000
-      internalID: -5595089627607841887
+      spriteID: b9a9775b5c574e690800000000000000
+      internalID: -7573799181316810085
       vertices: []
       indices: 
       edges: []

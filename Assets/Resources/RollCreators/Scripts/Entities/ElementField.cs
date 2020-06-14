@@ -10,10 +10,12 @@ public class ElementField : MonoBehaviour
     [SerializeField] private List<SpriteRenderer> electricity;
     [SerializeField] private SpriteRenderer light;
     private Collider2D collider;
+    private SpriteRenderer spriteRenderer;
 
-    void Start()
+    void Awake()
     {
         collider = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         UpdateElementSprite(element);
     }
     
@@ -28,18 +30,13 @@ public class ElementField : MonoBehaviour
                 element.Turn();
                 game.UpdateField();
             }
-
-            if (hit.collider != null)
-            {
-                UpdateElementSprite(element);
-            }
         }
     }
 
     public void UpdateElementSprite(Element e)
     {
         element = e;
-        GetComponent<SpriteRenderer>().sprite = Util.GetElementSprite(element);
+        spriteRenderer.sprite = Util.GetElementSprite(element);
         staticImage.sprite = Util.GetElementStaticSprite(element);
         List<Sprite> electricitySprites = Util.GetElementElectricitySprites(element);
         if (electricitySprites != null)

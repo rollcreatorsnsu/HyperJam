@@ -12,11 +12,13 @@ public class Game : MonoBehaviour
     [SerializeField] private Text resourcesText;
     [SerializeField] private GameObject emptyElementField;
     [HideInInspector] public float currentTime;
+    private ElementField[] elements;
 
     void Start()
     {
         currentTime = LevelLoader.currentLevelData.levelTime;
         Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
+        elements = FindObjectsOfType<ElementField>();
         UpdateField();
     }
 
@@ -46,6 +48,11 @@ public class Game : MonoBehaviour
     public void UpdateField()
     {
         LevelLoader.currentLevelData.UpdateConnections();
+
+        foreach (ElementField element in elements)
+        {
+            element.UpdateElementSprite(element.element);
+        }
 
         List<Element> condensers = LevelLoader.currentLevelData.GetDisconnectedCondensers();
         if (condensers != null)
