@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
     [HideInInspector] public float currentTime;
     private ElementField[] elements;
     private bool begin = false;
+    [HideInInspector] public bool end = false;
 
     void Start()
     {
@@ -27,6 +28,8 @@ public class Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (end) return;
+        
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             pauseMenu.Show();
@@ -69,31 +72,38 @@ public class Game : MonoBehaviour
         
         if (LevelLoader.currentLevelData.IsWin())
         {
-            if (LevelLoader.currentLevelNumber < 8)
-            {
-                if (GameProgress.progress[LevelLoader.currentPackName] < LevelLoader.currentLevelNumber + 1)
-                {
-                    GameProgress.progress[LevelLoader.currentPackName] = LevelLoader.currentLevelNumber + 1;
-                }
-            }
-            else
-            {
-                if (LevelLoader.currentPackName == "Easy")
-                {
-                    GameProgress.progress["Medium"] = 1;
-                }
-                else if (LevelLoader.currentPackName == "Medium")
-                {
-                    GameProgress.progress["Hard"] = 1;
-                }
-            }
-            GameProgress.resources += Mathf.FloorToInt(currentTime);
-            levelEndMenu.Show(true);
+            end = true;
+            StartCoroutine(Win());
             return;
         }
 
         currentTime += LevelLoader.currentLevelData.GetAddTime();
     }
+
+    private IEnumerator Win()
+    {
+        yield return new WaitForSeconds(2);
+        if (LevelLoader.currentLevelNumber < 8)
+        {
+            if (GameProgress.progress[LevelLoader.currentPackName] < LevelLoader.currentLevelNumber + 1)
+            {
+                GameProgress.progress[LevelLoader.currentPackName] = LevelLoader.currentLevelNumber + 1;
+            }
+        }
+        else
+        {
+            if (LevelLoader.currentPackName == "Easy")
+            {
+                GameProgress.progress["Medium"] = 1;
+            }
+            else if (LevelLoader.currentPackName == "Medium")
+            {
+                GameProgress.progress["Hard"] = 1;
+            }
+        }
+        GameProgress.resources += Mathf.FloorToInt(currentTime);
+        levelEndMenu.Show(true);
+    }    
 
     private IEnumerator CondenserOff(Element condenser)
     {

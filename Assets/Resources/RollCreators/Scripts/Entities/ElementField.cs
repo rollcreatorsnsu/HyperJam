@@ -27,6 +27,7 @@ public class ElementField : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (game.end) return;
         if (Input.GetMouseButtonUp(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);

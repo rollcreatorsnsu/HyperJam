@@ -31,7 +31,7 @@ public class Util : MonoBehaviour
             {
                 GameObject element = Instantiate(emptyElementField, new Vector3(offsetX + x * width, offsetY + y * height), Quaternion.identity);
                 Rect r = element.GetComponent<RectTransform>().rect;
-                element.transform.localScale = new Vector3(width / r.width, height / r.height);
+                element.transform.localScale = new Vector3(width / r.width, height / r.height, 1);
                 callback(element, levelData, x, levelData.levelHeight - y - 1);
             }
         }
