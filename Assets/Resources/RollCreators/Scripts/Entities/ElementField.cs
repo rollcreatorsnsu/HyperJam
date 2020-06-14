@@ -172,7 +172,7 @@ public class ElementField : MonoBehaviour
                     spriteRenderer.sprite = Util.GetElementSprite(element);
                     staticImage.sprite = Util.GetElementStaticSprite(element);
                     light.sprite = Util.GetElementLightSprite(element);
-                    effect = Instantiate(warningColdEffect, (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
+                    effect = Instantiate(warningColdEffect, (Vector2)rect.position + (rect.rect.size - new Vector2(0.5f, 0.5f)) / 2 * rect.localScale, Quaternion.identity);
                     game.UpdateField(true);
                 } 
                 else if (element.resistorLives >= 5)
@@ -181,7 +181,7 @@ public class ElementField : MonoBehaviour
                     spriteRenderer.sprite = Util.GetElementSprite(element);
                     staticImage.sprite = Util.GetElementStaticSprite(element);
                     light.sprite = Util.GetElementLightSprite(element);
-                    effect = Instantiate(warningWarmEffect, (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
+                    effect = Instantiate(warningWarmEffect, (Vector2)rect.position + (rect.rect.size - new Vector2(0.5f, 0.5f)) / 2 * rect.localScale, Quaternion.identity);
                     game.UpdateField(true);
                 }
             }
