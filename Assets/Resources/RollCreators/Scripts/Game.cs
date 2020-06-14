@@ -13,6 +13,7 @@ public class Game : MonoBehaviour
     [SerializeField] private GameObject emptyElementField;
     [HideInInspector] public float currentTime;
     private ElementField[] elements;
+    private bool begin = false;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class Game : MonoBehaviour
         Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
         elements = FindObjectsOfType<ElementField>();
         UpdateField();
+        begin = false;
     }
 
     // Update is called once per frame
@@ -29,8 +31,8 @@ public class Game : MonoBehaviour
         {
             pauseMenu.Show();
         }
-
-        if (!pauseMenu.IsShown() && !levelEndMenu.IsShown() && currentTime > 0)
+        
+        if (!pauseMenu.IsShown() && !levelEndMenu.IsShown() && currentTime > 0 && begin)
         {
             currentTime -= Time.deltaTime;
         }
@@ -47,6 +49,8 @@ public class Game : MonoBehaviour
 
     public void UpdateField()
     {
+        begin = true;
+
         LevelLoader.currentLevelData.UpdateConnections();
 
         foreach (ElementField element in elements)
