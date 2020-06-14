@@ -13,16 +13,14 @@ public class ElementField : MonoBehaviour
     [SerializeField] private GameObject timer;
     private Collider2D collider;
     private RectTransform rect;
+    private bool begin = false;
 
     void Awake()
     {
         collider = GetComponent<Collider2D>();
         rect = GetComponent<RectTransform>();
         UpdateElementSprite(element);
-        if (element.type == ElementType.RESISTOR)
-        {
-            StartCoroutine(Break());
-        }
+        begin = false;
     }
     
     // Update is called once per frame
@@ -50,12 +48,18 @@ public class ElementField : MonoBehaviour
                     Instantiate(timer,  (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
                 }
             }
+
+            if (!begin)
+            {
+                StartCoroutine(Break());
+                begin = true;
+            }
         }
     }
 
     public void UpdateElementSprite(Element e)
     {
-        if (element.type != ElementType.RESISTOR && e.type == ElementType.RESISTOR)
+        if (element.type != ElementType.RESISTOR && e.type == ElementType.RESISTOR && begin)
         {
             StartCoroutine(Break());
         }
