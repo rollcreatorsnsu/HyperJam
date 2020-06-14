@@ -14,6 +14,8 @@ public class Game : MonoBehaviour
     [SerializeField] private AudioSource music;
     [SerializeField] private AudioSource winSound;
     [SerializeField] private AudioSource looseSound;
+    [SerializeField] private List<Image> backImages;
+    [SerializeField] private SpriteRenderer background;
     [HideInInspector] public float currentTime;
     private ElementField[] elements;
     private bool begin = false;
@@ -22,6 +24,21 @@ public class Game : MonoBehaviour
     void Start()
     {
         BackgroundMusic.SetBackgroundMusic(music);
+        Color color = Color.white;
+        switch (LevelLoader.currentPackName)
+        {
+            case "Easy":
+                color = new Color(0.667f, 0.988f, 0.027f);
+                break;
+            case "Hard":
+                color = new Color(0.976f, 0.275f, 0.275f);
+                break;
+        }
+        foreach (Image image in backImages)
+        {
+            image.color = color;
+        }
+        background.color = color;
         currentTime = LevelLoader.currentLevelData.levelTime;
         Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
         elements = FindObjectsOfType<ElementField>();
@@ -121,7 +138,7 @@ public class Game : MonoBehaviour
     private IEnumerator CondenserOff(Element condenser)
     {
         yield return new WaitForSeconds(3);
-        if (!condenser.connected)
+        if (!condenser.connected && !end)
         {
             condenser.type = ElementType.CONDENSER_OFF;
             UpdateField();

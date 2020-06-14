@@ -474,6 +474,16 @@ MonoBehaviour:
   music: {fileID: 1370888808}
   winSound: {fileID: 666639578}
   looseSound: {fileID: 1724062129}
+  backImages:
+  - {fileID: 2065934425}
+  - {fileID: 952506715}
+  - {fileID: 1322129547}
+  - {fileID: 112800349}
+  - {fileID: 2006761949}
+  - {fileID: 6671295}
+  - {fileID: 1282990206}
+  - {fileID: 805528777}
+  background: {fileID: 1934730464}
   currentTime: 0
   end: 0
 --- !u!1 &447796373
@@ -4754,7 +4764,7 @@ RectTransform:
   m_AnchorMin: {x: 0.2646389, y: 0.44921875}
   m_AnchorMax: {x: 0.7936667, y: 0.82685935}
   m_AnchoredPosition: {x: 2.3000488, y: -0.5}
-  m_SizeDelta: {x: -15.614452, y: 2.500183}
+  m_SizeDelta: {x: -7.819271, y: 2.500183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065934424
 MonoBehaviour:

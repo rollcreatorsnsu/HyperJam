@@ -3554,6 +3554,8 @@ MonoBehaviour:
   easyPackButton: {fileID: 1596667529}
   mediumPackButton: {fileID: 200290309}
   hardPackButton: {fileID: 252395093}
+  background: {fileID: 439337080}
+  panel: {fileID: 926549375}
   currentPackSprite: {fileID: 1431396953790181923, guid: 6e6582341e4fd7b4ba2d14801564f0ae,
     type: 3}
   activePackSprite: {fileID: 3872370640917899509, guid: 6e6582341e4fd7b4ba2d14801564f0ae,

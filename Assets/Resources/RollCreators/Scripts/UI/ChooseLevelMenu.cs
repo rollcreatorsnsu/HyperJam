@@ -10,6 +10,8 @@ public class ChooseLevelMenu : MonoBehaviour
     [SerializeField] private Image easyPackButton;
     [SerializeField] private Image mediumPackButton;
     [SerializeField] private Image hardPackButton;
+    [SerializeField] private Image background;
+    [SerializeField] private Image panel;
     [SerializeField] private Sprite currentPackSprite;
     [SerializeField] private Sprite activePackSprite;
     [SerializeField] private Sprite inactivePackSprite;
@@ -32,27 +34,33 @@ public class ChooseLevelMenu : MonoBehaviour
         easyPackButton.sprite = GameProgress.progress["Easy"] > 0 ? activePackSprite : inactivePackSprite;
         mediumPackButton.sprite = GameProgress.progress["Medium"] > 0 ? activePackSprite : inactivePackSprite;
         hardPackButton.sprite = GameProgress.progress["Hard"] > 0 ? activePackSprite : inactivePackSprite;
+        Color color = Color.white;
         if (packName == "Easy")
         {
             easyPackButton.sprite = currentPackSprite;
-        }
-        else if (packName == "Medium")
-        {
-            mediumPackButton.sprite = currentPackSprite;
+            color = new Color(0.667f, 0.988f, 0.027f);
         }
         else if (packName == "Hard")
         {
             hardPackButton.sprite = currentPackSprite;
+            color = new Color(0.976f, 0.275f, 0.275f);
         }
+        easyPackButton.color = color;
+        mediumPackButton.color = color;
+        hardPackButton.color = color;
+        background.color = color;
+        panel.color = color;
         int currentLevel = GameProgress.progress[packName];
         for (int i = 0; i < currentLevel; i++)
         {
             buttons[i].sprite = activeLevelSprite;
+            buttons[i].color = color;
         }
 
         for (int i = currentLevel; i < buttons.Capacity; i++)
         {
             buttons[i].sprite = inactiveLevelSprite;
+            buttons[i].color = color;
         }
 
         currentPack = packName;
