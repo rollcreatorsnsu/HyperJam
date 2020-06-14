@@ -46,9 +46,9 @@ public class LevelEndMenu : MonoBehaviour
             button.onClick.AddListener(RetryLevel);
         }
 
-        totalTimeText.text = $"{LevelLoader.currentLevelData.levelTime}";
-        wastedTimeText.text = $"{LevelLoader.currentLevelData.levelTime - game.currentTime}";
-        remainedTimeText.text = $"{game.currentTime}";
+        totalTimeText.text = $"{LevelLoader.currentLevelData.levelTime:00:00}";
+        wastedTimeText.text = $"{LevelLoader.currentLevelData.levelTime - game.currentTime:00:00}";
+        remainedTimeText.text = $"{game.currentTime:00:00}";
         earnedResourcesText.text = $"+{Mathf.FloorToInt(game.currentTime)}";
         gameObject.SetActive(true);
     }

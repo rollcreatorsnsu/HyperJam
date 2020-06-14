@@ -41,7 +41,7 @@ public class Game : MonoBehaviour
             levelEndMenu.Show(false);
         }
 
-        timeText.text = $"{currentTime}";
+        timeText.text = $"{currentTime:00:00}";
         resourcesText.text = $"{GameProgress.resources}";
     }
 
