@@ -9,13 +9,12 @@ public class ElementField : MonoBehaviour
     [SerializeField] private SpriteRenderer staticImage;
     [SerializeField] private List<SpriteRenderer> electricity;
     [SerializeField] private SpriteRenderer light;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private Collider2D collider;
-    private SpriteRenderer spriteRenderer;
 
     void Awake()
     {
         collider = GetComponent<Collider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         UpdateElementSprite(element);
     }
     

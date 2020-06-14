@@ -82,8 +82,8 @@ public class Game : MonoBehaviour
 
     private IEnumerator CondenserOff(Element condenser)
     {
-        yield return new WaitForSeconds(5); // TODO: timing
-        if (condenser.connected == false)
+        yield return new WaitForSeconds(3);
+        if (!condenser.connected)
         {
             condenser.type = ElementType.CONDENSER_OFF;
             UpdateField();

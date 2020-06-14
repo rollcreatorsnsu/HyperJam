@@ -40,6 +40,22 @@ public class LevelData
         {
             BFSFromGenerator(coords);
         }
+
+        foreach (Vector2Int coords in condensersCoords)
+        {
+            Element condenser = levelStructure[coords.x, coords.y];
+            bool connected = condenser.connected;
+            if (connected)
+            {
+                condenser.type = ElementType.CONDENSER_ON;
+            }
+            if (condenser.type == ElementType.CONDENSER_ON)
+            {
+                BFSFromGenerator(coords);
+            }
+
+            condenser.connected = connected;
+        }
     }
 
     private void Calculate()
@@ -135,22 +151,6 @@ public class LevelData
                 return false;
             }
         }
-
-        foreach (Vector2Int coords in condensersCoords)
-        {
-            Element condenser = levelStructure[coords.x, coords.y];
-            if (condenser.type == ElementType.CONDENSER_OFF)
-            {
-                if (condenser.connected)
-                {
-                    levelStructure[coords.x, coords.y].type = ElementType.CONDENSER_ON;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
         return true;
     }
 
@@ -160,20 +160,13 @@ public class LevelData
         foreach (Vector2Int coords in condensersCoords)
         {
             Element condenser = levelStructure[coords.x, coords.y];
-            if (condenser.type == ElementType.CONDENSER_OFF)
+            if (condenser.type == ElementType.CONDENSER_ON && !condenser.connected)
             {
-                if (condenser.connected)
+                if (list == null)
                 {
-                    levelStructure[coords.x, coords.y].type = ElementType.CONDENSER_ON;
+                    list = new List<Element>();
                 }
-                else
-                {
-                    if (list == null)
-                    {
-                        list = new List<Element>();
-                    }
-                    list.Add(condenser);
-                }
+                list.Add(condenser);
             }
         }
         return list;

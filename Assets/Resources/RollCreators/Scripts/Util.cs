@@ -191,6 +191,7 @@ public class Util : MonoBehaviour
                 result.Add(sprites[24]);
                 break;
             case ElementType.CONDENSER_ON:
+                result.Add(sprites[21]);
                 result.Add(sprites[29]);
                 break;
         }
