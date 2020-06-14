@@ -167,5 +167,10 @@ public class Game : MonoBehaviour
         ElementField elementField = element.GetComponent<ElementField>();
         elementField.UpdateElementSprite(levelData.levelStructure[x, y]);
     }
+
+    public void Restart()
+    {
+        LevelLoader.Load(LevelLoader.currentPackName, LevelLoader.currentLevelNumber);
+    }
     
 }

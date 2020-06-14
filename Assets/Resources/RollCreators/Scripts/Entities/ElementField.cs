@@ -58,7 +58,7 @@ public class ElementField : MonoBehaviour
                     rotationSound.Play();
                 }
                 game.UpdateField(true);
-                if (element.connected != connected) // TODO: fix
+                if (element.connected != connected && element.connected) // TODO: fix
                 {
                     if (element.type == ElementType.LAMP)
                     {
