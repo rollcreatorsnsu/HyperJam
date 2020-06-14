@@ -44,6 +44,8 @@ public class ElementField : MonoBehaviour
                 {
                     element.type = ElementType.RESISTOR;
                     element.resistorLives = 0;
+                    spriteRenderer.sprite = Util.GetElementSprite(element);
+                    staticImage.sprite = Util.GetElementStaticSprite(element);
                     GameObject effect = Instantiate(repairEffect, transform.position, Quaternion.identity);
                     Destroy(effect, 1);
                     GameProgress.resources--;
@@ -110,7 +112,16 @@ public class ElementField : MonoBehaviour
             }
             light.sprite = Util.GetElementLightSprite(e);
         }
-        if (!e.connected && e.type != ElementType.CONDENSER_ON)
+
+        if (e.type == ElementType.BROKEN_RESISTOR || e.type == ElementType.COLD_RESISTOR)
+        {
+            foreach (SpriteRenderer el in electricity)
+            {
+                el.color = Color.clear;
+            }
+            light.color = Color.white;
+        }
+        else if (!e.connected && e.type != ElementType.CONDENSER_ON)
         {
             foreach (SpriteRenderer el in electricity)
             {
@@ -155,6 +166,9 @@ public class ElementField : MonoBehaviour
                 if (element.resistorLives <= -5)
                 {
                     element.type = ElementType.COLD_RESISTOR;
+                    spriteRenderer.sprite = Util.GetElementSprite(element);
+                    staticImage.sprite = Util.GetElementStaticSprite(element);
+                    light.sprite = Util.GetElementLightSprite(element);
                     GameObject effect = Instantiate(warningColdEffect, transform.position, Quaternion.identity);
                     Destroy(effect, 1);
                     game.UpdateField(true);
@@ -162,6 +176,9 @@ public class ElementField : MonoBehaviour
                 else if (element.resistorLives >= 5)
                 {
                     element.type = ElementType.BROKEN_RESISTOR;
+                    spriteRenderer.sprite = Util.GetElementSprite(element);
+                    staticImage.sprite = Util.GetElementStaticSprite(element);
+                    light.sprite = Util.GetElementLightSprite(element);
                     GameObject effect = Instantiate(warningWarmEffect, transform.position, Quaternion.identity);
                     Destroy(effect, 1);
                     game.UpdateField(true);
