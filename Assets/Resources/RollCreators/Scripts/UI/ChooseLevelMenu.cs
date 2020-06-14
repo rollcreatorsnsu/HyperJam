@@ -13,10 +13,12 @@ public class ChooseLevelMenu : MonoBehaviour
     [SerializeField] private Sprite currentPackSprite;
     [SerializeField] private Sprite activePackSprite;
     [SerializeField] private Sprite inactivePackSprite;
+    [SerializeField] private AudioSource music;
     private string currentPack;
 
     void Start()
     {
+        BackgroundMusic.SetBackgroundMusic(music);
         for (int i = 0; i < buttons.Capacity; i++)
         {
             buttons[i].sprite = inactiveLevelSprite;

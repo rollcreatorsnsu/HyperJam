@@ -11,6 +11,9 @@ public class Game : MonoBehaviour
     [SerializeField] private Text timeText;
     [SerializeField] private Text resourcesText;
     [SerializeField] private GameObject emptyElementField;
+    [SerializeField] private AudioSource music;
+    [SerializeField] private AudioSource winSound;
+    [SerializeField] private AudioSource looseSound;
     [HideInInspector] public float currentTime;
     private ElementField[] elements;
     private bool begin = false;
@@ -18,6 +21,7 @@ public class Game : MonoBehaviour
 
     void Start()
     {
+        BackgroundMusic.SetBackgroundMusic(music);
         currentTime = LevelLoader.currentLevelData.levelTime;
         Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
         elements = FindObjectsOfType<ElementField>();
@@ -43,6 +47,11 @@ public class Game : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
+            if (!end)
+            {
+                looseSound.Play();
+            }
+            end = true;
             levelEndMenu.Show(false);
         }
 
@@ -72,6 +81,10 @@ public class Game : MonoBehaviour
         
         if (LevelLoader.currentLevelData.IsWin())
         {
+            if (!end)
+            {
+                winSound.Play();
+            }
             end = true;
             StartCoroutine(Win());
             return;

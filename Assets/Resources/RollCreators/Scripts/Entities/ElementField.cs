@@ -12,6 +12,9 @@ public class ElementField : MonoBehaviour
     [SerializeField] private SpriteRenderer light;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private GameObject timer;
+    [SerializeField] private AudioSource rotationSound;
+    [SerializeField] private AudioSource lampSound;
+    [SerializeField] private AudioSource inductionSound;
     private Collider2D collider;
     private RectTransform rect;
     private bool begin = false;
@@ -34,7 +37,8 @@ public class ElementField : MonoBehaviour
             if (hit.collider == collider)
             {
                 bool isInduction = element.type == ElementType.INDUCTION;
-                if (element.type == ElementType.COLD_RESISTOR || element.type == ElementType.BROKEN_RESISTOR)
+                bool connected = element.connected;
+                if ((element.type == ElementType.COLD_RESISTOR || element.type == ElementType.BROKEN_RESISTOR) && GameProgress.resources > 0)
                 {
                     element.type = ElementType.RESISTOR;
                     element.resistorLives = 0;
@@ -43,11 +47,17 @@ public class ElementField : MonoBehaviour
                 else
                 {
                     element.Turn();
+                    rotationSound.Play();
                 }
                 game.UpdateField();
                 if (isInduction && element.type == ElementType.INDUCTION_USED)
                 {
                     Instantiate(timer,  (Vector2)rect.position + rect.rect.size / 2 * rect.localScale, Quaternion.identity);
+                    inductionSound.Play();
+                }
+                if (element.type == ElementType.LAMP && element.connected != connected)
+                {
+                    lampSound.Play();
                 }
             }
 

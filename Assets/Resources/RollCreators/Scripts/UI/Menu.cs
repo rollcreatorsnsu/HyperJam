@@ -3,17 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    private bool isLoaded = false;
+    [SerializeField] private AudioSource music;
+    
     void Awake()
     {
-        GameProgress.Init();
-        Options.Init();
-        isLoaded = true;
+        BackgroundMusic.SetBackgroundMusic(music);
     }
     
     public void _Start()
     {
-        if (!isLoaded) return;
         SceneManager.LoadScene("ChooseLevel");
     }
 }
