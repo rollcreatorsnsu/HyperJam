@@ -94,7 +94,7 @@ public class LevelData
             if ((connection & 1) != 0 && q.Item2.x > 0)
             {
                 Element element = levelStructure[q.Item2.x - 1, q.Item2.y];
-                if (!element.connected && (element.connection & 4) != 0)
+                if (!element.connected && (element.connection & 4) != 0 && element.type != ElementType.BROKEN_RESISTOR && element.type != ElementType.COLD_RESISTOR)
                 {
                     queue.Enqueue(new Tuple<Element, Vector2Int>(element, new Vector2Int(q.Item2.x - 1, q.Item2.y)));
                 }
@@ -102,7 +102,7 @@ public class LevelData
             if ((connection & 2) != 0 && q.Item2.y < levelHeight - 1)
             {
                 Element element = levelStructure[q.Item2.x, q.Item2.y + 1];
-                if (!element.connected && (element.connection & 8) != 0)
+                if (!element.connected && (element.connection & 8) != 0 && element.type != ElementType.BROKEN_RESISTOR && element.type != ElementType.COLD_RESISTOR)
                 {
                     queue.Enqueue(new Tuple<Element, Vector2Int>(element, new Vector2Int(q.Item2.x, q.Item2.y + 1)));
                 }
@@ -110,7 +110,7 @@ public class LevelData
             if ((connection & 4) != 0 && q.Item2.x < levelWidth - 1)
             {
                 Element element = levelStructure[q.Item2.x + 1, q.Item2.y];
-                if (!element.connected && (element.connection & 1) != 0)
+                if (!element.connected && (element.connection & 1) != 0 && element.type != ElementType.BROKEN_RESISTOR && element.type != ElementType.COLD_RESISTOR)
                 {
                     queue.Enqueue(new Tuple<Element, Vector2Int>(element, new Vector2Int(q.Item2.x + 1, q.Item2.y)));
                 }
@@ -118,7 +118,7 @@ public class LevelData
             if ((connection & 8) != 0 && q.Item2.y > 0)
             {
                 Element element = levelStructure[q.Item2.x, q.Item2.y - 1];
-                if (!element.connected && (element.connection & 2) != 0)
+                if (!element.connected && (element.connection & 2) != 0 && element.type != ElementType.BROKEN_RESISTOR && element.type != ElementType.COLD_RESISTOR)
                 {
                     queue.Enqueue(new Tuple<Element, Vector2Int>(element, new Vector2Int(q.Item2.x, q.Item2.y - 1)));
                 }

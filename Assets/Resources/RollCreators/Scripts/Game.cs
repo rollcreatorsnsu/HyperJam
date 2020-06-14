@@ -67,7 +67,10 @@ public class Game : MonoBehaviour
         {
             if (LevelLoader.currentLevelNumber < 12)
             {
-                GameProgress.progress[LevelLoader.currentPackName] = LevelLoader.currentLevelNumber + 1;
+                if (GameProgress.progress[LevelLoader.currentPackName] < LevelLoader.currentLevelNumber + 1)
+                {
+                    GameProgress.progress[LevelLoader.currentPackName] = LevelLoader.currentLevelNumber + 1;
+                }
             }
             GameProgress.resources += Mathf.FloorToInt(currentTime);
             levelEndMenu.Show(true);

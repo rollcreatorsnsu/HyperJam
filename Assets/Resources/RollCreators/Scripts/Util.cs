@@ -101,6 +101,8 @@ public class Util : MonoBehaviour
                 return sprites[1];
             case ElementType.BROKEN_RESISTOR:
                 return sprites[2];
+            case ElementType.COLD_RESISTOR:
+                return sprites[3];
             case ElementType.INDUCTION:
             case ElementType.INDUCTION_USED:
                 return sprites[10];
@@ -125,6 +127,8 @@ public class Util : MonoBehaviour
                 return sprites[4];
             case ElementType.BROKEN_RESISTOR:
                 return sprites[5];
+            case ElementType.COLD_RESISTOR:
+                return sprites[6];
         }
         return null;
     }
@@ -136,6 +140,8 @@ public class Util : MonoBehaviour
         {
             case ElementType.BROKEN_RESISTOR:
                 return sprites[20];
+            case ElementType.COLD_RESISTOR:
+                return sprites[13];
             case ElementType.LAMP:
                 return element.connected ? sprites[9] : null;
         }
@@ -144,7 +150,7 @@ public class Util : MonoBehaviour
 
     public static List<Sprite> GetElementElectricitySprites(Element element)
     {
-        if (!element.connected || element.type == ElementType.NONE) return null;
+        if ((!element.connected && element.type != ElementType.CONDENSER_ON) || element.type == ElementType.NONE || element.type == ElementType.CONDENSER_OFF) return null;
         List<Sprite> result = new List<Sprite>();
         Sprite[] sprites = Resources.LoadAll<Sprite>("RollCreators/Sprites/Elements/Elements");
         switch (element.type)
@@ -185,10 +191,8 @@ public class Util : MonoBehaviour
                 result.Add(sprites[24]);
                 break;
             case ElementType.CONDENSER_ON:
-            case ElementType.CONDENSER_OFF:
                 result.Add(sprites[29]);
                 break;
-
         }
         return result;
     }

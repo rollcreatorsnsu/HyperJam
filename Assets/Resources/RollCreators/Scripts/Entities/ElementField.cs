@@ -27,7 +27,15 @@ public class ElementField : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider == collider)
             {
-                element.Turn();
+                if (element.type == ElementType.COLD_RESISTOR || element.type == ElementType.BROKEN_RESISTOR)
+                {
+                    element.type = ElementType.RESISTOR;
+                    GameProgress.resources--;
+                }
+                else
+                {
+                    element.Turn();
+                }
                 game.UpdateField();
             }
         }
@@ -69,10 +77,27 @@ public class ElementField : MonoBehaviour
 
     private IEnumerator Break()
     {
+        bool connected = element.connected;
         while (true)
         {
             yield return new WaitForSeconds(5); // TODO: timing
-            element.type = ElementType.BROKEN_RESISTOR;
+            if (element.connected != connected)
+            {
+                connected = element.connected;
+                continue;
+            }
+            if (element.type != ElementType.RESISTOR)
+            {
+                continue;
+            }
+            if (element.connected)
+            {
+                element.type = ElementType.BROKEN_RESISTOR;
+            }
+            else
+            {
+                element.type = ElementType.COLD_RESISTOR;
+            }
             game.UpdateField();
         }
     }
