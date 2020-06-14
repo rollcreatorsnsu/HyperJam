@@ -6,7 +6,7 @@ public class Util : MonoBehaviour
   
     public delegate void GenerationCallback(GameObject emptyElementField, LevelData levelData, int x, int y);
 
-    public static void GenerateField(LevelData levelData, GameObject emptyElementField, GenerationCallback callback)
+    public static Rect GenerateField(LevelData levelData, GameObject emptyElementField, GenerationCallback callback)
     {
         Vector2 beginCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
         Vector2 endCamera = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
@@ -35,6 +35,7 @@ public class Util : MonoBehaviour
                 callback(element, levelData, x, levelData.levelHeight - y - 1);
             }
         }
+        return new Rect(offsetX, offsetY, width * levelData.levelWidth, height * levelData.levelHeight);
     }
 
     private static int GetDirections(int connections)

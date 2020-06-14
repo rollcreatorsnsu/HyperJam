@@ -16,6 +16,7 @@ public class Game : MonoBehaviour
     [SerializeField] private AudioSource looseSound;
     [SerializeField] private List<Image> backImages;
     [SerializeField] private SpriteRenderer background;
+    [SerializeField] private SpriteRenderer grid;
     [HideInInspector] public float currentTime;
     private ElementField[] elements;
     private bool begin = false;
@@ -39,8 +40,11 @@ public class Game : MonoBehaviour
             image.color = color;
         }
         background.color = color;
+        grid.color = color;
         currentTime = LevelLoader.currentLevelData.levelTime;
-        Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
+        Rect rr = grid.GetComponent<RectTransform>().rect;
+        Rect r = Util.GenerateField(LevelLoader.currentLevelData, emptyElementField, GenerationCallback);
+        grid.transform.localScale = new Vector3(r.width / rr.width, r.height / rr.height, 1);
         elements = FindObjectsOfType<ElementField>();
         UpdateField(true);
         begin = false;
