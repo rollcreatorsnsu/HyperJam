@@ -160,7 +160,7 @@ public class Util : MonoBehaviour
 
     public static List<Sprite> GetElementElectricitySprites(Element element)
     {
-        if (element.type == ElementType.NONE || element.type == ElementType.CONDENSER_OFF) return null;
+        if (element.type == ElementType.NONE) return null;
         List<Sprite> result = new List<Sprite>();
         Sprite[] sprites = Resources.LoadAll<Sprite>("RollCreators/Sprites/Elements/Elements");
         switch (element.type)
@@ -201,6 +201,7 @@ public class Util : MonoBehaviour
                 result.Add(sprites[24]);
                 break;
             case ElementType.CONDENSER_ON:
+            case ElementType.CONDENSER_OFF:
                 result.Add(sprites[21]);
                 result.Add(sprites[29]);
                 break;
